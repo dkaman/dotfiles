@@ -1,0 +1,2 @@
+This repo is for control over my sytem dotfiles.  I am using GNU Stow to manage the 
+installation of the configs.

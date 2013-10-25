@@ -1,0 +1,7 @@
+[user]
+	name = Dallas Kaman
+	email = dallas.kaman@gmail.com
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff

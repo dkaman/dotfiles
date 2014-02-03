@@ -11,9 +11,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
-
+#start awesome WM with dual monitor setup in normal mode
 exec awesome
+xrandr --output HDMI3 --auto
+xrandr --output HDMI1 --auto --right-of HDMI3
+
 # exec gnome-session
 # exec startkde
 # exec startxfce4

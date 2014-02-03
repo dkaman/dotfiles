@@ -12,9 +12,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 #start awesome WM with dual monitor setup in normal mode
-exec awesome
 xrandr --output HDMI3 --auto
 xrandr --output HDMI1 --auto --right-of HDMI3
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+exec awesome
 
 # exec gnome-session
 # exec startkde

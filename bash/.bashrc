@@ -7,6 +7,7 @@
 
 export EDITOR="vim"
 alias ls='ls --color=auto'
+alias l='ls -lAh'
 
 #Aliases that govern screen orientation, rotate monitor vertically when coding.  It's way cooler... 8)
 alias normal='xrandr --output HDMI3 --auto --rotate "normal" --output HDMI1 --auto --rotate "normal" --right-of HDMI3'

@@ -14,6 +14,8 @@ fi
 #start awesome WM with dual monitor setup in normal mode
 xrandr --output HDMI3 --auto
 xrandr --output HDMI1 --auto --right-of HDMI3
+/home/dallas/scripts/misc/xmap/xmap-ctrl-nocaps.sh
+feh --bg-scale /home/dallas/wallpapers/DarkSide.jpg
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 exec awesome
 

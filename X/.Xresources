@@ -39,3 +39,6 @@ XTerm*vt100.translations: #override \
 	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
 	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
 	
+! Make the alt key work
+Xterm*metaSendsEscape: true
+Xterm*eightBitInput:false

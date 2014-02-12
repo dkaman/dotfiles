@@ -43,7 +43,7 @@ let mapleader=","
 "---Dark terminal
 set bg=dark
 
-"---Indentation and whitespac
+"---Indentation and whitespace
 set autoindent
 set smartindent
 set expandtab
@@ -123,7 +123,7 @@ colorscheme darkocean
     nmap <Leader>wc <C-w>c
 
     "---NERDTree
-    nmap <Leader>nt ;NERDTreeToggle
+    nmap <Leader>nt ;NERDTreeToggle<CR>
     
     "---Puts a semicolon at the end of the line and restores where you were in
     "the line

@@ -16,3 +16,7 @@ alias code='xrandr --output HDMI3 --auto --rotate "left" --output HDMI1 --auto -
 PS1='[\u@\h \W]\$ '
 complete -cf sudo
 complete -cf man
+
+PATH="$(ruby -e 'puts Gem.user_dir')/bin: $PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

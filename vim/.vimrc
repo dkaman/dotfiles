@@ -58,6 +58,10 @@ let g:C_Control_j = 'off'
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
+"---LaTeX suite settings
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor="latex"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -140,6 +144,9 @@ colorscheme darkocean
 
     "---Auto indent the file
     nmap <Leader>ai magg=G'a
+
+    "---Paste from the system clipboard
+    nmap <Leader>p "*p
 
 
 "---Colon commands

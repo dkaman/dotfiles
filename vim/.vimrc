@@ -30,7 +30,7 @@ set backspace=indent,eol,start
 "---show current mode
 set showmode
 
-"---Enable filetype plugins
+"---Enable  plugins
 filetype plugin on
 filetype indent on
 
@@ -59,7 +59,6 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview
 
 "---LaTeX suite settings
-set grepprg=grep\ -nH\ $*
 let g:tex_flavor="latex"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""

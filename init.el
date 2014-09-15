@@ -162,17 +162,34 @@ window configuration."
 ;; color theme
 (load-theme 'wombat)
 
+
 ;; I just wanna be evil
 (require-package 
   '(evil
     evil-leader
     evil-surround
     evil-extra-operator
+    evil-args
     key-chord))
 (global-evil-extra-operator-mode t)
 (global-evil-leader-mode t)
 (global-evil-surround-mode t)
-(evil-mode t)
+
+;; bind evil-args text objects
+(define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+(define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
+
+;; bind evil-forward/backward-args
+(define-key evil-normal-state-map "L" 'evil-forward-arg)
+(define-key evil-normal-state-map "H" 'evil-backward-arg)
+(define-key evil-motion-state-map "L" 'evil-forward-arg)
+(define-key evil-motion-state-map "H" 'evil-backward-arg)
+
+;; bind evil-jump-out-args
+(define-key evil-normal-state-map "K" 'evil-jump-out-args)
+
+;; make my macros work dammit!
+(define-key evil-normal-state-map "Q" (kbd "@q"))
 
 ;; I love me a good jj escape :)  
 (setq key-chord-two-keys-delay 0.5)
@@ -193,7 +210,8 @@ window configuration."
   "gs" 'ido-goto-symbol
   "rf" 'ido-recentf-open
   "%"  'insert-file-name
-  "ei" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
+  "ff" 'ff-find-other-file
+  "ei" (lambda () (interactive)(find-file "~/.emacs.d/init.el")))
 
 ;; icomplete for M-x completion
 (icomplete-mode t)
@@ -272,3 +290,11 @@ window configuration."
 		    (string= (car imenu--rescan-item) name))
 	  (add-to-list 'symbol-names name)
 	  (add-to-list 'name-and-pos (cons name position))))))))
+
+(global-auto-revert-mode t)
+
+(winner-mode t)
+(evil-mode t)
+(put 'downcase-region 'disabled nil)
+(global-hl-line-mode t)
+

@@ -298,3 +298,4 @@ window configuration."
 (put 'downcase-region 'disabled nil)
 (global-hl-line-mode t)
 
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)

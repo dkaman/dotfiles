@@ -120,7 +120,27 @@ window configuration."
       org-hide-emphasis-markers t
       org-hierarchical-todo-statistics     nil
       org-hierarchical-checkbox-statistics nil
-      org-src-fontify-natively t)
+      org-src-fontify-natively t
+      org-directory "~/org")
+
+(setq org-default-notes-file (concat org-directory "capture.org")) 
+(evil-leader/set-key "oc" 'org-capture) 
+(setq org-capture-templates
+      '(("t" "Todo" entry
+         (file+datetree (concat org-directory "/todo.org") "Tasks")
+         "* TODO %?\n  %a")
+
+        ("j" "Journal" entry
+         (file+datetree (concat org-directory "/journal.org"))
+         "* %?\nEntered on %U\n  %i\n  %a")
+
+        ("c" "Comedy" entry
+         (file+headline (concat org-directory "/comedy.org"))
+         "* %?\n  %i\n  %a")
+
+        ("m" "Music" entry
+         (file+headline (concat org-directory "/music.org") "Notes")
+         "* %?\n")))
 
 (require-package 
 '(evil
@@ -167,6 +187,7 @@ window configuration."
   "%"  'insert-file-name
   "ff" 'ff-find-other-file
   "wc" 'count-words
+  "oc" 'org-capture
   "ec" (lambda () (interactive)(find-file "~/.emacs.d/init.org")))
 
 ;; bind evil-args text objects

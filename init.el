@@ -67,6 +67,16 @@ CLEAR-COMMAND        is an optional command to run when reverting back to the
 (load-theme 'wombat)
 (setq inhibit-startup-screen t)
 (fset 'yes-or-no-p 'y-or-n-p)
+(set-buffer-file-coding-system 'unix)   ;Unix mode. Always
+(setq c-default-style "linux"
+      c-basic-offset 2                  ;Fix the GNU tabbing default
+      ido-create-new-buffer 'always
+      require-final-newline 'visit-save ;compliance
+      indent-tabs-mode nil
+      comment-style 'indent)
+(push '("." . "~/.emacs.d/.emacs-backups") backup-directory-alist)
+(setq backup-by-copying-when-linked t
+    backup-by-copying-when-mismatch t)
 
 (after 'ido
   (setq ido-everywhere t                             ;always Ido
@@ -118,7 +128,8 @@ window configuration."
   evil-surround
   evil-extra-operator
   evil-args
-  key-chord))
+  key-chord
+  evil-lisp-state))
 (global-evil-extra-operator-mode t)
 (global-evil-leader-mode t)
 (global-evil-surround-mode t)
@@ -161,6 +172,14 @@ window configuration."
 ;; bind evil-args text objects
 (define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
 (define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
+
+(define-key evil-normal-state-map "L" 'evil-lisp-state)
+
+(after 'evil-lisp-state 
+    (define-key evil-lisp-state-map "K"   'evil-lisp-state-previous-sexp)
+    (define-key evil-lisp-state-map "L"   'evil-lisp-state-next-sexp-down)
+    (define-key evil-lisp-state-map "H"   'sp-backward-up-sexp)
+    (define-key evil-lisp-state-map "J"   'sp-next-sexp))
 
 (global-auto-revert-mode t)
 (winner-mode t)

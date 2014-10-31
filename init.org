@@ -104,7 +104,7 @@
     (ido-mode t)
     #+END_SRC
 * Ido functions
-    #+BEGIN_SRC emacs-lisp :tangle 
+    #+BEGIN_SRC emacs-lisp :tangle yes
     (require 'ido)	
     (defun ido-recentf-open ()
       "Use `ido-completing-read' to \\[find-file] a recent file"
@@ -302,12 +302,23 @@
     (icomplete-mode t)
     (auto-revert-mode t)
 
-    (require 'midnight)
-    (require 'diminish) 
+    (require-package 
+    '(midnight
+      diminish 
+      multiple-cursors)) 
 
     (mapc #'(lambda (dim) (after (car dim) (diminish (cdr dim))))
 	      '((undo-tree     . undo-tree-mode))) 
     #+END_SRC
+* Dallas's bindings
+    #+BEGIN_SRC emacs-lisp :tangle yes
+    ;; multiple cursors map
+    (evil-leader/set-key
+      "cn" 'mc/mark-next-like-this
+      "cp" 'mc/mark-previous-like-this
+      "ca" 'mc/mark-all-like-this)  
+    #+END_SRC
+
 * Boilerplate
     #+BEGIN_SRC emacs-lisp :tangle yes
     (defun insert-file-name ()

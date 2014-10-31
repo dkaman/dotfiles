@@ -89,6 +89,58 @@ CLEAR-COMMAND        is an optional command to run when reverting back to the
     ido-goto-symbol))
 (ido-mode t)
 
+(require 'ido)      
+(defun ido-recentf-open ()
+  "Use `ido-completing-read' to \\[find-file] a recent file"
+  (interactive)
+  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
+      (message "Opening file...")
+    (message "Aborting")))
+
+(defun ido-goto-symbol (&optional symbol-list)
+  "Refresh imenu and jump to a function in the buffer using
+   ido. Functions are defined by the active minor mode."
+  (interactive)
+  (defvar symbol-names)
+  (defvar name-and-pos)
+  (unless (featurep 'imenu)
+    (require 'imenu nil t))
+  (cond
+   ((not symbol-list)
+    (let ((ido-mode ido-mode)
+          name-and-pos symbol-names position)
+      (while (progn
+               (imenu--cleanup)
+               (setq imenu--index-alist nil)
+               (ido-goto-symbol (imenu--make-index-alist))
+               (setq selected-symbol
+                     (ido-completing-read "Symbol: " symbol-names))
+               (string= (car imenu--rescan-item) selected-symbol)))
+      (push-mark nil t nil)         ;set the mark
+      (setq position (cdr (assoc selected-symbol name-and-pos)))
+      (cond
+       ((overlayp position)
+        (goto-char (overlay-start position)))
+       (t
+        (goto-char position)))))
+   ((listp symbol-list)
+    (dolist (symbol symbol-list)
+      (let (name position)
+        (cond
+         ((and (listp symbol) (imenu--subalist-p symbol))
+          (ido-goto-symbol symbol))
+         ((listp symbol)
+          (setq name (car symbol))
+          (setq position (cdr symbol)))
+         ((stringp symbol)
+          (setq name symbol)
+          (setq position
+                (get-text-property 1 'org-imenu-marker symbol))))
+        (unless (or (null position) (null name)
+                    (string= (car imenu--rescan-item) name))
+          (add-to-list 'symbol-names name)
+          (add-to-list 'name-and-pos (cons name position))))))))
+
 (defun djk/raise-magit-status ()
   "Bring up a full-screen magit-status or restore previous
 window configuration."
@@ -136,6 +188,10 @@ window configuration."
 
         ("c" "Comedy" entry
          (file+headline (concat org-directory "/comedy.org"))
+         "* %?\n  %i\n  %a")
+
+        ("s" "School" entry
+         (file+datetree (concat org-directory "/school.org"))
          "* %?\n  %i\n  %a")
 
         ("m" "Music" entry
@@ -210,11 +266,19 @@ window configuration."
 (icomplete-mode t)
 (auto-revert-mode t)
 
-(require 'midnight)
-(require 'diminish) 
+(require-package 
+'(midnight
+  diminish 
+  multiple-cursors)) 
 
 (mapc #'(lambda (dim) (after (car dim) (diminish (cdr dim))))
           '((undo-tree     . undo-tree-mode)))
+
+;; multiple cursors map
+(evil-leader/set-key
+  "cn" 'mc/mark-next-like-this
+  "cp" 'mc/mark-previous-like-this
+  "ca" 'mc/mark-all-like-this)
 
 (defun insert-file-name ()
   "Insert the full path file name into the current buffer."

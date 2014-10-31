@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export EDITOR="vim"
+export EDITOR="emacs"
 alias ls='ls --color=auto'
 alias l='ls -lAh'
 
@@ -13,9 +13,19 @@ alias l='ls -lAh'
 alias normal='xrandr --output HDMI3 --auto --rotate "normal" --output HDMI1 --auto --rotate "normal" --right-of HDMI3'
 alias code='xrandr --output HDMI3 --auto --rotate "left" --output HDMI1 --auto --rotate "normal" --right-of HDMI3'
 
-PS1='[\u@\h \W]\$ '
 complete -cf sudo
 complete -cf man
+
+function md () { mkdir -p "$@" && cd "$@"; }
+
+export PATH="/opt/chef/embedded/bin:$PATH"
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1="\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;35m\]\@\[\e[0m\]\[\e[00;37m\] [\[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;37m\]]\$(__git_ps1)\n:> \[\e[0m\]"
+
+export ALTERNATE_EDITOR=""
+export EDITOR=emacsclient
+alias et="emacsclient -t "                      # used to be "emacs -nw"
+alias ew="emacsclient -c -a emacs "
 
 PATH="$(ruby -e 'puts Gem.user_dir')/bin: $PATH"
 

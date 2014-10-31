@@ -2,6 +2,6 @@
 	name = Dallas Kaman
 	email = dallas.kaman@gmail.com
 [core]
-	editor = vim
+	editor = emacs
 [merge]
-	tool = vimdiff
+	tool = ediff

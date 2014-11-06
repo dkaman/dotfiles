@@ -1,0 +1,188 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/dallas/dotfiles/xmonad/" . ".xmonad/")
+ ("/home/dallas/dotfiles/emacs/" . ".emacs.d/")
+ ("/home/dallas/dotfiles/" . "xmonad/")
+ ("/home/dallas/Documents/resume/" . "tex/")
+ ("/home/dallas/Documents/cs349/notecards/" . "ch6/")
+ ("/home/dallas/Documents/cs349/" . "video/")
+ ("/home/dallas/Documents/python/" . "final/")
+ ("/home/dallas/Documents/EE460N/lab3/" . "test/")
+ ("/home/dallas/Documents/EE460N/lab2/" . "test/")
+ ("/home/" . "dallas/")
+ ("/mnt/nas/hershals_stuff/repositories/" . "hershal/")
+ ("/mnt/nas/hershals_stuff/" . "repositories/")
+ ("/mnt/nas/" . "hershals_stuff/")
+ ("/mnt/" . "nas/")
+ ("/tmp/simulator/" . "ee460n-labs/")
+ ("/tmp/" . "simulator/")
+ ("/" . "home/")
+ ("/home/dallas/Documents/EE460N/" . "lab3-esc/")
+ ("/home/dallas/Documents/haskell/" . "euler/")
+ ("/home/dallas/Documents/" . "infosec/")
+ ("/home/dallas/.emacs.d/" . "auto-save-list/")
+ ("/home/dallas/" . ".xmonad/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/dallas/Documents/infosec/"
+ "/home/dallas/Documents/"
+ "/home/dallas/dotfiles/xmonad/.xmonad/"
+ "/home/dallas/.xmonad/"
+ "/home/dallas/dotfiles/emacs/.emacs.d/"
+ "/home/dallas/dotfiles/xmobar/"
+ "/home/dallas/"
+ "/home/dallas/Documents/resume/tex/"
+ "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/files/default/amanda/"
+ "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/recipes/"
+ "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/"
+ "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/templates/default/amanda/"
+ "/home/dallas/.emacs.d/"
+ "/home/dallas/Documents/cs349/video/"
+ "/home/dallas/Documents/mythology/"
+ "/home/dallas/Documents/cs349/notecards/ch6/"
+ "/home/dallas/Documents/cs349/tia_letter/"
+ "/home/dallas/Documents/EE460N/lab4/"
+ "/home/dallas/Documents/python/final/"
+ "/home/dallas/Documents/cs349/paper/"
+ "/home/dallas/Documents/comsoc/shell_vulns/"
+ "/home/dallas/Documents/EE460N/lab3-esc/"
+ "/home/dallas/Documents/EE460N/lab3/test/"
+ "/home/dallas/Documents/EE460N/lab2/test_progs/"
+ "/home/dallas/Documents/EE460N/lab2/test/"
+ "/home/dallas/Documents/EE460N/lab2/build/"
+ "/home/dallas/Documents/EE460N/lab2/"
+ "/home/dallas/Documents/EE460N/lab1/"
+ "/home/dallas/Documents/EE460N/inc/"
+ "/tmp/simulator/ee460n-labs/"
+ "/home/dallas/Documents/haskell/euler/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "findings.org"
+ "xmonad.hs"
+ "init.el"
+ "init.org"
+ ".xmobarrc"
+ "resume.tex"
+ "progress-report.org"
+ "exam2_notes.org"
+ "10-14-14-lec_notes.org"
+ "ch6_dkaman.org"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/dallas/Documents/infosec/" (21592 16364 688860 700000) "./" "findings.org" "../")
+
+ ("/home/dallas/" (21593 29046 887927 231000) ".dbus/" ".goutputstream-MD40ZW" ".goutputstream-AV0Y0W" "Music/" ".goutputstream-TIARNW" ".eclipse/" ".adobe/" "vim-plugins/" ".ghc/" ".compiz/" ".gnome/" ".gphoto/" ".goutputstream-1IZQSW" ".thunderbird/" "uzbl/" ".pulse/" ".octave_hist" ".goutputstream-LRIM2W" ".goutputstream-1EKCTW" ".goutputstream-AQAKWW" ".goutputstream-ST6NUW" ".dmrc" ".goutputstream-EOSEYW" ".goutputstream-SRUNMW" ".gitconfig" ".bash_logout" ".swp" ".goutputstream-91TDNW" ".goutputstream-J6YWWW" ".fonts/" "org/" ".xmonad/" ".Xauthority" ".gimp-2.8/" ".speech-dispatcher/" ".cabal/" ".goutputstream-FXUIZW" "Stepper_Motor_Lab4/" "Public/" ".bash_history" ".goutputstream-GTJPWW" ".eclim/" ".wine-browser/" ".dvdcss/" ".swt/" ".goutputstream-U090PW" "workspace/" ".mission-control/" ".goutputstream-X5YNVW" ".goutputstream-OW9P2W" ".goutputstream-I9R62W" ".goutputstream-AIKANW" ".goutputstream-7392UW" ".goutputstream-4P8T2W" ".vim/" ".texmf-var/" ".gconf/" ".goutputstream-CIO8WW" ".appletviewer" ".goutputstream-11ZVNW" ".pki/" ".goutputstream-WGTCNW" ".goutputstream-96IXQW" ".cache/" "Documents/" "dotfiles/" ".goutputstream-TK011W" "chef_install" ".goutputstream-H01XQW" ".goutputstream-67LJRW" ".goutputstream-H88FUW" ".goutputstream-GKO2SW" ".goutputstream-AH652W" "armitage-tmp/" ".goutputstream-YON9YW" ".festival_history" ".gem/" ".rvm/" ".goutputstream-YIR9XW" ".face" ".gnome2/" ".goutputstream-PO8CTW" ".dmenu_cache" ".goutputstream-14LARW" ".goutputstream-L3RLTW" ".zprofile" ".goutputstream-6N2BUW" ".tuxguitar-1.2/" "#.xmobarrc#" ".git-credential-cache/" ".profile" ".goutputstream-E1FTQW" ".ICEauthority" ".goutputstream-1X1XSW" ".goutputstream-FR3XMW" "Pictures/" ".goutputstream-A8P2UW" ".asoundrc" ".zshrc" ".goutputstream-RJDHWW" ".icedtea/" ".goutputstream-JX2TOW" ".freerdp/" ".goutputstream-9KGO2W" ".goutputstream-HV17VW" ".config/" ".gtk-bookmarks" ".goutputstream-2MANSW" ".goutputstream-ZX7EWW" ".gvfs/" "StateMonad/" "Tabs/" ".goutputstream-9K3HNW" ".goutputstream-C2ZSYW" ".swn" ".rnd" ".gksu.lock" ".bash_profile" ".audacity-data/" ".goutputstream-BFNJNW" ".goutputstream-VWKJMW" ".gervill/" ".goutputstream-N0S1MW" "SSHKeys/" ".emacs.d/" "Sound_Lab5/" ".multisystem/" ".goutputstream-2XSIPW" ".rpmdb/" ".irssi/" ".armitage.prop" ".goutputstream-3QNDRW" "Downloads/" ".goutputstream-89HYYW" ".xdvirc" "metasploit-latest-linux-installer.run" ".gstreamer-0.10/" ".goutputstream-WPE1SW" ".viminfo" ".xmobarrc" ".macromedia/" ".screenrc" ".goutputstream-DJURMW" ".goutputstream-PDH1XW" "tor-browser_en-US/" ".goutputstream-GABVSW" ".mysql_history" ".goutputstream-SX8LTW" ".xmodmap" ".goutputstream-P2O7ZW" ".goutputstream-EX3GWW" ".goutputstream-IF79TW" ".cpan/" ".goutputstream-9XKMMW" ".hplip/" ".xsession-errors" ".compiz-1/" ".bash_aliases~" ".ido.last~" "perl5/" ".goutputstream-5HLWRW" ".pulse-cookie" ".local/" "Music for dad/" ".goutputstream-1J732W" ".goutputstream-LIGWZW" ".java/" "Desktop/" ".goutputstream-NSDCUW" ".goutputstream-UNF9PW" ".goutputstream-ZT9TNW" ".bundler/" ".goutputstream-GQSIRW" ".bashrc" ".goutputstream-KUTVNW" ".gnome2_private/" "VirtualBox VMs/" ".VirtualBox/" ".cpanm/" ".goutputstream-4CAGNW" ".goutputstream-O06LYW" ".lesshst" ".goutputstream-C0HOVW" ".pip/" ".goutputstream-74C62W" ".goutputstream-AQXRRW" ".goutputstream-67WRRW" ".init.el~" ".goutputstream-1X42SW" ".goutputstream-O5MTWW" "Videos/" ".multisystem-theme" ".goutputstream-SUWIUW" ".msf4/" ".goutputstream-9OD5YW" ".shotwell/" ".vimrc" ".zcompdump" ".goutputstream-GA0UQW" ".goutputstream-1UXQNW" ".matplotlib/" ".lastpass/" ".goutputstream-8K83WW" ".goutputstream-7A950W" "chef-repo/" ".mozilla/" ".remmina/" ".goutputstream-EXODPW" ".kde/" ".goutputstream-R2YZQW" ".goutputstream-A730WW" ".xsession-errors.old" ".vmware/" "archlinux-2013.10.01-dual.iso" ".thumbnails/" ".aptitude/" "Templates/" ".goutputstream-NQDWVW" ".swo" ".goutputstream-BS6SRW" ".irb-history" ".fontconfig/" ".wireshark/" ".ido.last" ".bash_aliases" ".ssh/" "../" "./")
+
+ ("/home/dallas/Documents/" (21592 11179 876645 749000) "notes/" ".sort.java.swp" "history/" "basedrive/" "test.txt" "445l/" "./" "bacon_pancakes_team01_report.pdf" "games/" "mus307/" "fonts/" "dotfiles/" "python/" "resume/" "mythology/" "automata/" "praetorian/" "cs349/" "haskell/" "emacs/" "../" "multiboot/" "comedy/" "infosec/" "doug.jpg" "ee333T/" "comsoc/" "cs439H/" "home-chef-repo/" "scripts/" "songs/" "terry/" "tx_gas_account.txt" "tools/" "torrents/" "jokes/" "EE460N/" "perl_lec/" "algorithms/" "422c/" "lisp_projects/" "PerlProjects/" "vms/" "NetworkSecurity/" "higherOrderPerlExamples/" "geniusIdeas/" "ee316/")
+
+ ("/home/dallas/Documents/mythology/" (21586 55379 978614 286000) "10-16-14-lec_notes.out" "10-14-14-lec_notes.tex" "10-14-14-lec_notes.out" "10-21-14-lec_notes.toc" "build_pdfs.sh" "10-28-14-lec_notes.aux" "./" "10-2-14-lec_notes.aux" "myth.pdf" "10-28-14-lec_notes.tex" "10-16-14-lec_notes.aux" "10-2-14-lec_notes.log" "10-14-14-lec_notes.org" "10-16-14-lec_notes.org" "10-2-14-lec_notes.org" "10-28-14-lec_notes.out" "texput.log" "9-16-14-lec_notes.txt" "10-14-14-lec_notes.toc" "10-7-14-lec_notes.aux" "../" "10-2-14-lec_notes.toc" "10-16-14-lec_notes.log" "10-7-14-lec_notes.out" "10-2-14-lec_notes.out" "10-21-14-lec_notes.log" "10-2-14-lec_notes.tex" "10-7-14-lec_notes.org" "10-21-14-lec_notes.org" "10-7-14-lec_notes.tex" "pdfs/" "10-16-14-lec_notes.toc" "10-14-14-lec_notes.log" "10-7-14-lec_notes.log" "10-16-14-lec_notes.tex" "10-21-14-lec_notes.tex" "10-14-14-lec_notes.aux" "10-28-14-lec_notes.log" "9-11-14-lec_notes.txt" "10-28-14-lec_notes.toc" "10-7-14-lec_notes.toc" "10-21-14-lec_notes.aux" "exam2_notes.org" "10-21-14-lec_notes.out" "discussions/")
+
+ ("/home/dallas/Documents/cs349/video/" (21586 25157 604626 65000) "./" "progress-report.aux" "progress-report.tex" "progress-report.pdf" "../" "progress-report.toc" "progress-report.out" "progress-report.org" "progress-report.log")
+
+ ("/home/dallas/.emacs.d/" (21592 1647 968160 392000) "eshell/" "init.el" "./" "init.org" "auto-save-list/" "../" "evil-extra-operator-master/" "elpa/" ".emacs-backups/")
+
+ ("/home/dallas/Documents/resume/tex/" (21591 63340 127180 601000) "resume._aux" "./" "resume.tex.project.vim" "res.cls" "../" "resume.aux" "resume.pdf" "resume.log" "helvetica.sty" "resume._log" "resume.tex")
+
+ ("/home/dallas/dotfiles/xmobar/" (21592 821 4126 107000) "./" "#.xmobarrc#" "../" ".xmobarrc")
+
+ ("/home/dallas/dotfiles/emacs/.emacs.d/" (21592 1647 968160 392000) "eshell/" "init.el" "./" "init.org" "auto-save-list/" "../" "evil-extra-operator-master/" "elpa/" ".emacs-backups/")
+
+ ("/home/dallas/.xmonad/" (21592 3168 307005 302000) "./" "xmonad.hi" "../" "xmonad.hs" "xmonad-i386-linux" "xmonad.errors" "xmonad.o")
+
+ ("/home/dallas/dotfiles/xmonad/.xmonad/" (21592 3168 307005 302000) "./" "xmonad.hi" "../" "xmonad.hs" "xmonad-i386-linux" "xmonad.errors" "xmonad.o")
+
+ ("/home/dallas/dotfiles/xmonad/" (21586 56100 522644 161000) "./" ".xmonad/" "../")
+
+ ("/home/dallas/dotfiles/emacs/" (21588 9427 996180 297000) "./" "../" ".emacs.d/")
+
+ ("/home/dallas/dotfiles/" (21588 9386 484178 576000) "irssi/" "./" "xmonad/" "README" "vim/" "emacs/" "../" "X/" "asound/" "bash/" "xmobar/" "git/" ".gitignore" "screen/" ".git/")
+
+ ("/home/dallas/Documents/resume/" (21334 58111 886285 120000) "./" "../" "tex/" "resume.pdf")
+
+ ("/home/dallas/Documents/cs349/" (21586 24846 204613 155000) "paper/" "./" "rice/" "privacy/" "assignment1/" "article.txt" "../" "tia_letter/" "notecards/" "assignment3/" "whatsright/" "video/" "philosophers/" "proj/")
+
+ ("/home/dallas/Documents/cs349/tia_letter/" (21583 55175 663893 51000) "./" "tia_letter.org" "tia_letter.pdf" "../" "tia_letter.tex" "tia_letter.aux" "tia_letter.out" "tia_letter.log" "tia_letter.toc")
+
+ ("/home/dallas/Documents/cs349/notecards/ch6/" (21583 59129 852056 982000) "./" "ch6_dkaman.org" "ch6_dkaman.toc" "../" "ch6_dkaman.aux" "ch6_dkaman.tex" "ch6_dkaman.log" "ch6_dkaman.pdf" "ch6_dkaman.out")
+
+ ("/home/dallas/Documents/cs349/privacy/" (21567 31656 687757 705000) "privacy_dkaman.out" "privacy_dkaman.log" "./" "privacy_dkaman.toc" "privacy_dkaman.tex" "privacy_dkaman.aux" "../" "privacy_dkaman.org" "privacy_dkaman.pdf")
+
+ ("/home/dallas/Documents/cs349/notecards/" (21583 49023 829220 965000) "./" "ch7/" "ch2/" "ch5/" "ch6/" "../" "ch1/" "ch8/" "ch9/")
+
+ ("/home/dallas/Documents/EE460N/lab2/" (21578 52142 593827 605000) "lc3bsim2_no_fuckup.c" "debug/" "./" "test_progs/" "lc3bsim2.c" "test/" "CMakeLists.txt" "../" "build/" "late-submission-results.txt")
+
+ ("/home/dallas/Documents/EE460N/lab2/test/" (21581 52121 713893 499000) "ldw.obj" "xor.obj" "ldb.obj" "jmp.obj" "br_back.obj" "./" "jsrr.obj" "br_n.obj" "lea.obj" "assemble-tests.sh" "rshfl.obj" "stb.obj" "br.obj" "add.obj" "execute-tests.sh" "br_p.obj" "../" "jsr.obj" "and.obj" "lshf.obj" "br_np.obj" "dumpsim" "trap.obj" "not.obj" "rshfa.obj" "br_nzp.obj" "stw.obj" "ret.obj")
+
+ ("/home/dallas/Documents/EE460N/lab2/test_progs/" (21579 3716 538536 943000) "add.asm" "jmp.asm" "lea.asm" "stw.asm" "./" "trap.asm" "ldb.asm" "jsr.asm" "rshfa.asm" "../" "stb.asm" "br.asm" "not.asm" "br_back.asm" "br_np.asm" "br_nzp.asm" "xor.asm" "ret.asm" "lshf.asm" "ldw.asm" "br_n.asm" "br_p.asm" "rshfl.asm" "and.asm" "jsrr.asm")
+
+ ("/home/dallas/Documents/EE460N/lab3/test/" (21579 59033 345953 585000) "./" "esc_dumpsim" "collect-logs-esc.sh" "esc_21:12:59.gz" "../" "build/" "djk_20:03:44.gz" "esc_09:26:20.gz" "djk_dumpsim" "collect-logs-template.sh")
+
+ ("/home/dallas/Documents/EE460N/lab3-esc/" (21579 59033 317953 586000) "./" "lc3bsim3.c" "control_store.csv" "ucode3" "../" "lab-descriptor.pdf" "grader.log" "convert_control_store_to_ucode.sh")
+
+ ("/home/dallas/Documents/cs349/paper/" (21576 63317 303765 109000) "first_draft.aux" "./" "first_draft.log" "first_draft.toc" "first_draft.out" "../" "first_draft.pdf" "first_draft.tex" "first_draft.org")
+
+ ("/home/dallas/Documents/python/final/" (21578 13648 862891 265000) "test.txt" "./" "TrainingError.py" "final_tests.py" "../" "final_given_tests.py" "final.py" "submission.zip" "submission/" "out.txt" "argparse" "writen.txt" "Graph.py" "__pycache__/")
+
+ ("/home/dallas/Documents/EE460N/lab4/" (21581 52582 725912 607000) "add.asm" "except_prot.asm" "./" "test_prot.asm" "except_unaligned.asm" "int.asm" "test_prot.obj" "../" "except_unknown.asm" "data.asm" "test_unknown.asm" "test_int.asm" "run" "vector_table.asm" "ucode.org" "test_unaligned.asm")
+
+ ("/home/dallas/Documents/EE460N/" (21581 16067 458956 746000) "./" "README.md" "lab4_djk/" "doc/" "lab3/" "../" "lab4-esc/" "bin/" "lab2/" "lab3-esc/" "lab1/" ".gitignore" "lab3_djk/" "inc/" "lab4/" ".git/" "templates/")
+
+ ("/home/dallas/Documents/EE460N/lab4_djk/" (21581 51531 137869 14000) "lc3bsim4.c" "simulate" "./" "ucode4" "../" "dumpsim" "ucode.org")
+
+ ("/home/dallas/Documents/haskell/euler/" (21574 54665 355087 284000) "prob7.hs" "prob20.hs" "./" "prob3.hs" "prob5.hs" "prob12.hs" "../" "prob6.hs" "prob2.hs" "prob8.hs" "prob10.hs" "prob15.hs")
+
+ ("/home/dallas/Documents/comsoc/shell_vulns/" (21559 11382 193991 118000) "./" "vuln3/" "shell_vulnerabilities.odp" "../" "vuln2/" "web_page.rb~" "web_page.rb" "vuln1/" "shell_vulnerabilities.pdf")
+
+ ("/home/dallas/Documents/python/" (21566 51840 60647 647000) "assignment5/" "./" "assignment6/" "assignment1/" "assignment4/" "../" "final/" "assignment3/" "assignment2/")
+
+ ("/home/dallas/Documents/EE460N/lab2/build/" (21535 32004 97523 218000) "simulate" "./" "cmake_install.cmake" "../" "dumpsim" "CMakeCache.txt" "Makefile" "CMakeFiles/" "execute-results.txt")
+
+ ("/home/dallas/Documents/comsoc/" (21217 38363 322717 260000) "examples/" "MemoryCorruption.pdf" "./" ".swp" "exploit" "interactive" "exploit.c" "../" "interactive.c" "MemoryCorruption.pptx" "MemoryCorruption.odp")
+
+ ("/home/dallas/Documents/EE460N/lab3_djk/" (21547 28370 911277 60000) "simulate" "./" "ucode" "lc3bsim3.c" "control_store.csv" "control_store.xls" "../" "dumpsim" "lc3bsim3.c~")
+
+ ("/home/dallas/Documents/EE460N/lab3/" (21547 27040 55221 886000) "./" "test/" "../")
+
+ ("/home/dallas/Documents/EE460N/inc/" (21534 21325 183541 132000) "./" "binary_ops.h~" "symbol_table.h" "sim_globals.h~" "registers.h" "opcode_ops.h" "symbol_table.c" "lc3b_errors.h" "io_ops.h" "binary_ops.h" "../" "numeric_ops.h" "sim_execute.h~" "lc3b_errors.h~" "numeric_ops.c" "io_ops.c" "lc3b_errors.c~" "binary_ops.c" "lc3b_errors.c" "opcode_ops.c" "globals.h" "#symbol_table.c#")
+
+ ("/home/dallas/Documents/EE460N/lab1/" (21532 39378 270790 336000) "./" "object.obj" "assemble.i" "CMakeLists.txt" "../" "assembly.asm" "TAGS" "build/" "assemble.c" "assemble.h")
+
+ ("/home/dallas/Documents/python/assignment3/" (21529 49590 220115 740000) "./" "assignment3.py" "assignment3_test.py" "../" "assignment3.pyc" "__pycache__/" "assignment3.py~")
+
+ ("/home/dallas/Documents/haskell/" (21527 20002 393655 948000) "output.hs" "./" "euler/" "../" "output.hs~" "vector.hs")
+
+ ("/usr/include/" (21524 44578 697529 966000) "time.h" "gdbm-ndbm.h" "ctype.h" "mqueue.h" "pcre.h" "nl_types.h" "png.h" "xf86drm.h" "ncurses.h" "regex.h" "nss.h" "clif.h" "obstack.h" "pthread.h" "v8.h" "ncurses_dll.h" "v8-profiler.h" "termios.h" "panel.h" "ttyent.h" "xf86drmMode.h" "tar.h" "dirent.h" "gdk-pixbuf-2.0/" "spawn.h" "stdint.h" "re_comp.h" "ifaddrs.h" "inttypes.h" "memory.h" "pcre_scanner.h" "gmp-i386.h" "sysexits.h" "libutil.h" "signal.h" "pcrecpp.h" "gshadow.h" "semaphore.h" "err.h" "libpng12/" "pcre_stringpiece.h" "byteswap.h" "scsi/" "argp.h" "link.h" "atk-1.0/" "cursesp.h" "v8-testing.h" "dlfcn.h" "form.h" "libgen.h" "utime.h" "openssl/" "gnu-versions.h" "langinfo.h" "thread_db.h" "numpy/" "termcap.h" "endian.h" "fontconfig/" "dbus-1.0/" "xcb/" "mntent.h" "v8-preparser.h" "i18n-extension.h" "ev++.h" "net/" "neteconet/" "webkitgtk-1.0/" "drm/" "arpa/" "ltdl.h" "asm-generic/" "gtk-2.0/" "expat_config.h" "netdb.h" "stab.h" "python2.7_d/" "xlocale.h" "GL/" "pygtk-2.0/" "linux/" "search.h" "X11/" "fstab.h" "ieee754.h" "fmtmsg.h" "grp.h" "fnmatch.h" "cursesm.h" "nouveau/" "zlibdefs.h" "_G_config.h" "pango-1.0/" "wctype.h" "nc_tparm.h" "mysql/" "sgtty.h" "glib-2.0/" "xen/" "netash/" "libsoup-2.4/" "cursesapp.h" "pngconf.h" "pcrecpparg.h" "libltdl/" "netatalk/" "zlib.h" "syscall.h" "v8stdint.h" "python3.2mu/" "netpacket/" "cpio.h" "stdio.h" "wait.h" "stdlib.h" "utmpx.h" "libpng/" "libdrm/" "cursesw.h" "netax25/" "sound/" "gtk-unix-print-2.0/" "netipx/" "gstreamer-0.10/" "ftw.h" "tgmath.h" "ar.h" "lastlog.h" "ares_dns.h" "c++/" "gmp.h" "openvpn/" "gdbm.h" "getopt.h" "sudo_plugin.h" "aliases.h" "python2.7/" "glob.h" "autosprintf.h" "features.h" "limits.h" "complex.h" "ares_build.h" "curses.h" "gprolog/" "printf.h" "nlist.h" "stropts.h" "paths.h" "freetype2/" "shadow.h" "xorg/" "elf.h" "termio.h" "clang/" "expat_external.h" "gconv.h" "errno.h" "regexp.h" "ev.h" "netrom/" "nfs/" "fenv.h" "eti.h" "sched.h" "nodejs/" "libexslt/" "resolv.h" "mcheck.h" "values.h" "v8-debug.h" "gettext-po.h" "rdma/" "sqlite3.h" "ft2build.h" "pwd.h" "protocols/" "ucontext.h" "a.out.h" "locale.h" "libxslt/" "unistd.h" "ustat.h" "cursesf.h" "cursslk.h" "rpcsvc/" "iconv.h" "sqlite3ext.h" "ares_version.h" "netrose/" "pixman-1/" "zconf.h" "execinfo.h" "crypt.h" "syslog.h" "yaml.h" "pty.h" "vis.h" "wordexp.h" "tic.h" "mm/" "wchar.h" "video/" "gmpxx.h" "malloc.h" "aio.h" "setjmp.h" "libintl.h" "ulimit.h" "pcreposix.h" "argz.h" "cairo/" "menu.h" "alloca.h" "unctrl.h" "libxml2/" "dbm.h" "rpc/" "poll.h" "assert.h" "etip.h" "math.h" "netinet/" "term.h" "utmp.h" "ares_rules.h" "error.h" "string.h" "ares.h" "i386-linux-gnu/" "fcntl.h" "strings.h" "mtd/" "term_entry.h" "gio-unix-2.0/" "nautilus-sendto/" "envz.h" "bsd/" "netiucv/" "libio.h" "expat.h" "monetary.h" "stdio_ext.h" "fts.h" "readline/" "../" "./")
+
+ ("/home/dallas/Documents/EE460N/lab1/build/" (21526 19445 84577 270000) "assemble" "./" "cmake_install.cmake" "../" "CMakeCache.txt" "Makefile" "CMakeFiles/")
+
+ ("/tmp/" (21526 19485 768578 957000) "wut.png" ".X0-lock" "simulator/" "pulse-PKdhtXMmr18n/" "./" "emacs1000/" "pulse-FNpfk4N4vGu5/" "ksocket-dallas/" "ssh-GRteutdT2411/" ".X11-unix/" "test/" "evil/" "unity_support_test.0" "keyring-RXtIMD/" "../" "tmpxTBtaO" "at-spi2/" "kde-dallast5Jnik/" ".ICE-unix/" "ghc18126_0/" "pulse-kGeYYjRypm2W/" "alexx/" "vmware-root/" "VMwareDnD/" ".com.google.Chrome.4o4Jza/")
+
+ ("/mnt/nas/hershals_stuff/repositories/hershal/" (21524 52584 600851 735000) "SchoolDocs.git/" "conf.d.git/" ".password-store.git/" "ee460n-labs.git/" "ee422c-labs.git/" "c++14-tests.git/" "ee460m-labs.git/" "MathKit.git/" "resume.git/" "ee312-labs.git/" "ee460m-homework.git/" "../" "./")
+
+ ("/mnt/nas/hershals_stuff/repositories/" (21524 52595 25851 385000) "shared/" "hershal/" "../" "./")
+
+ ("/mnt/nas/hershals_stuff/" (21524 50568 216851 175000) "DIS_v57/" "arch/" "BMW-2005_TIS_3.4.2-EN/" "repositories/" "EasyDIS44/" "../" "./")
+
+ ("/mnt/nas/" (21520 37921 266850 781000) "._.DS_Store" "jails/" ".system/" "ee461l/" "media/" "installation_media/" "hershals_stuff/" "vms/" ".DS_Store" "../" "./")
+
+ ("/mnt/" (21501 4628 277628 89000) "nas/" "./" "external/" "../")
+
+ ("/tmp/simulator/ee460n-labs/" (21526 1118 101162 126000) "./" "assembler.h" "opcodes.o" "assembler.o" "lab3/" "opcodeops.o" "opcodeops.h" "../" "validation/" "opcodeops.c" "TAGS" "lab2/" ".gitignore" "Makefile" "opcodes.c" "opcodes.h" "assembler.c" ".git/" "toupper.asm" "binary" "globals.h")
+
+ ("/tmp/simulator/" (21526 876 757152 122000) "./" "ee460n-labs/" "../")
+
+ ("/home/dallas/.emacs.d/auto-save-list/" (21525 17310 911116 475000) "./" "../" ".saves-11835-pinball-wizard~")
+
+ ("/home/" (21507 24504 641916 709000) "dallas/" "./" "../" "eric/")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

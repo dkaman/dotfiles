@@ -13,6 +13,7 @@ main = do
         , focusedBorderColor = myFocusedBorderColor
         , manageHook = manageDocks <+> manageHook defaultConfig
         , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , startupHook = startup
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
                         , ppTitle = xmobarColor "purple" "" . shorten 50
@@ -27,3 +28,9 @@ main = do
 myTerminal = "xterm"
 myWorkspaces = ["1:main", "2:web", "3:emacs", "4:term", "5:media"]
 myFocusedBorderColor = "#85E0FF"
+
+startup :: X ()
+startup = do
+  spawn "xterm"
+  spawn "emacs --daemon"
+  spawn "xmodmap ~/.xmodmap"

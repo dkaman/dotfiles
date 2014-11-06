@@ -191,6 +191,10 @@
     (after 'midnight                        ;we gonna let it all hang out
       (midnight-delay-set 'midnight-delay "5:00am"))
     #+END_SRC
+** Haskell Mode hooks
+    #+BEGIN_SRC emacs-lisp :tangle yes
+    (add-hook 'haskell-mode-hook 'turn-on-haskell-indent) 
+    #+END_SRC
 * Org configs
 ** Org behavior
     #+BEGIN_SRC emacs-lisp :tangle yes

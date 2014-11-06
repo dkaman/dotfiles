@@ -168,6 +168,8 @@ window configuration."
 (after 'midnight                        ;we gonna let it all hang out
   (midnight-delay-set 'midnight-delay "5:00am"))
 
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+
 (setq org-hide-leading-stars t
       org-hide-emphasis-markers t
       org-hierarchical-todo-statistics     nil

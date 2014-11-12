@@ -19,14 +19,15 @@ complete -cf man
 function md () { mkdir -p "$@" && cd "$@"; }
 
 export PATH="/opt/chef/embedded/bin:$PATH"
+export PATH="/home/dallas/.cabal/bin:$PATH"
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1="\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;35m\]\@\[\e[0m\]\[\e[00;37m\] [\[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;37m\]]\$(__git_ps1)\n:> \[\e[0m\]"
+export PS1="\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;35m\]\@\[\e[0m\]\[\e[00;37m\] [\[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;37m\]]\n:> \[\e[0m\]"
 
 export ALTERNATE_EDITOR=""
 export EDITOR=emacsclient
 alias et="emacsclient -t "                      # used to be "emacs -nw"
 alias ew="emacsclient -c -a emacs "
 
-PATH="$(ruby -e 'puts Gem.user_dir')/bin: $PATH"
+PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

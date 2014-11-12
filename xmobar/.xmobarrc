@@ -1,4 +1,3 @@
--- TODO: Make the battery widget work
 Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
        , bgColor = "black"
        , fgColor = "grey"
@@ -25,7 +24,6 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
 				   , "--normal"   , "darkorange"
 				   , "--high"     , "darkgreen"
 				   , "--" -- battery specific options
-				   , "-c"       , "energy_full"
 				   , "-f"	, "APD1/online"
                                    -- discharging status
                                    , "-o"	, "<left>% (<timeleft>)"

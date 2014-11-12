@@ -2,9 +2,15 @@
 
 ;; ----- ido-last-directory-list -----
 (
+ ("/home/dallas/Documents/resume/tex/" . "new-res/")
+ ("/home/dallas/Documents/tools/sqlmap/" . "sqlmap-dev/")
+ ("/home/dallas/Documents/tools/" . "sqlmap/")
+ ("/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/templates/default/" . "amanda/")
+ ("/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/templates/" . "default/")
+ ("/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/" . "recipes/")
  ("/home/dallas/dotfiles/xmonad/" . ".xmonad/")
  ("/home/dallas/dotfiles/emacs/" . ".emacs.d/")
- ("/home/dallas/dotfiles/" . "xmonad/")
+ ("/home/dallas/dotfiles/" . "xmobar/")
  ("/home/dallas/Documents/resume/" . "tex/")
  ("/home/dallas/Documents/cs349/notecards/" . "ch6/")
  ("/home/dallas/Documents/cs349/" . "video/")
@@ -21,25 +27,27 @@
  ("/" . "home/")
  ("/home/dallas/Documents/EE460N/" . "lab3-esc/")
  ("/home/dallas/Documents/haskell/" . "euler/")
- ("/home/dallas/Documents/" . "infosec/")
+ ("/home/dallas/Documents/" . "resume/")
  ("/home/dallas/.emacs.d/" . "auto-save-list/")
  ("/home/dallas/" . ".xmonad/")
 )
 
 ;; ----- ido-work-directory-list -----
 (
+ "/home/dallas/"
+ "/home/dallas/Documents/resume/tex/new-res/"
+ "/home/dallas/Documents/resume/tex/"
+ "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/recipes/"
+ "/home/dallas/dotfiles/xmobar/"
+ "/home/dallas/.xmonad/"
  "/home/dallas/Documents/infosec/"
+ "/home/dallas/Documents/tools/sqlmap/sqlmap-dev/"
+ "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/templates/default/amanda/"
  "/home/dallas/Documents/"
  "/home/dallas/dotfiles/xmonad/.xmonad/"
- "/home/dallas/.xmonad/"
  "/home/dallas/dotfiles/emacs/.emacs.d/"
- "/home/dallas/dotfiles/xmobar/"
- "/home/dallas/"
- "/home/dallas/Documents/resume/tex/"
  "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/files/default/amanda/"
- "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/recipes/"
  "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/"
- "/scpc:dallas@lannister.as.utexas.edu:/Users/dallas/chef-repo/cookbooks/mac/templates/default/amanda/"
  "/home/dallas/.emacs.d/"
  "/home/dallas/Documents/cs349/video/"
  "/home/dallas/Documents/mythology/"
@@ -63,41 +71,51 @@
 
 ;; ----- ido-work-file-list -----
 (
- "findings.org"
- "xmonad.hs"
- "init.el"
- "init.org"
  ".xmobarrc"
  "resume.tex"
- "progress-report.org"
- "exam2_notes.org"
- "10-14-14-lec_notes.org"
- "ch6_dkaman.org"
+ "xmonad.hs"
+ "findings.org"
+ "gradebook.txt"
+ "lab_software.rb"
+ "default.rb"
+ "amanda-install.erb"
+ "init.el"
+ "init.org"
 )
 
 ;; ----- ido-dir-file-cache -----
 (
- ("/home/dallas/Documents/infosec/" (21592 16364 688860 700000) "./" "findings.org" "../")
+ ("/home/dallas/" (21603 3810 423314 113000) ".dbus/" ".goutputstream-MD40ZW" ".goutputstream-AV0Y0W" "Music/" ".goutputstream-TIARNW" ".eclipse/" ".adobe/" "vim-plugins/" ".ghc/" ".compiz/" ".gnome/" ".gphoto/" ".goutputstream-1IZQSW" ".thunderbird/" "uzbl/" ".pulse/" ".octave_hist" ".goutputstream-LRIM2W" ".goutputstream-1EKCTW" ".goutputstream-AQAKWW" ".goutputstream-ST6NUW" ".dmrc" ".goutputstream-EOSEYW" ".goutputstream-SRUNMW" ".gitconfig" ".bash_logout" ".swp" ".goutputstream-91TDNW" ".goutputstream-J6YWWW" ".fonts/" "org/" ".xmonad/" ".Xauthority" ".gimp-2.8/" ".speech-dispatcher/" ".cabal/" ".goutputstream-FXUIZW" "Stepper_Motor_Lab4/" "Public/" ".bash_history" ".goutputstream-GTJPWW" ".ssr/" ".eclim/" ".wine-browser/" ".dvdcss/" ".swt/" ".goutputstream-U090PW" "workspace/" ".mission-control/" ".goutputstream-X5YNVW" ".goutputstream-OW9P2W" ".goutputstream-I9R62W" ".goutputstream-AIKANW" ".goutputstream-7392UW" ".goutputstream-4P8T2W" ".vim/" ".texmf-var/" ".gconf/" ".goutputstream-CIO8WW" ".appletviewer" ".goutputstream-11ZVNW" "Pink_Floyd-The_Endless_River-PROPER-CD-FLAC-2014-PERFECT/" ".pki/" ".goutputstream-WGTCNW" ".goutputstream-96IXQW" ".cache/" "Documents/" "dotfiles/" ".goutputstream-TK011W" "chef_install" ".goutputstream-H01XQW" ".goutputstream-67LJRW" ".goutputstream-H88FUW" ".goutputstream-GKO2SW" ".goutputstream-AH652W" "armitage-tmp/" ".goutputstream-YON9YW" ".festival_history" ".gem/" ".rvm/" ".goutputstream-YIR9XW" ".face" ".gnome2/" ".goutputstream-PO8CTW" ".dmenu_cache" ".goutputstream-14LARW" ".goutputstream-L3RLTW" ".zprofile" ".goutputstream-6N2BUW" ".tuxguitar-1.2/" ".git-credential-cache/" ".profile" ".goutputstream-E1FTQW" ".ICEauthority" ".goutputstream-1X1XSW" ".goutputstream-FR3XMW" "Pictures/" ".goutputstream-A8P2UW" ".asoundrc" ".zshrc" ".goutputstream-RJDHWW" ".icedtea/" ".goutputstream-JX2TOW" ".freerdp/" ".goutputstream-9KGO2W" ".goutputstream-HV17VW" ".config/" ".gtk-bookmarks" ".goutputstream-2MANSW" ".goutputstream-ZX7EWW" ".gvfs/" "StateMonad/" "Tabs/" ".goutputstream-9K3HNW" ".goutputstream-C2ZSYW" ".swn" ".rnd" ".gksu.lock" ".bash_profile" ".audacity-data/" ".goutputstream-BFNJNW" ".goutputstream-VWKJMW" ".gervill/" ".john/" ".goutputstream-N0S1MW" "SSHKeys/" ".emacs.d/" "Sound_Lab5/" ".multisystem/" ".goutputstream-2XSIPW" ".rpmdb/" ".irssi/" ".armitage.prop" ".goutputstream-3QNDRW" "Downloads/" ".goutputstream-89HYYW" ".xdvirc" "metasploit-latest-linux-installer.run" ".gstreamer-0.10/" ".goutputstream-WPE1SW" ".viminfo" ".xmobarrc" ".macromedia/" ".screenrc" ".goutputstream-DJURMW" ".goutputstream-PDH1XW" "tor-browser_en-US/" ".goutputstream-GABVSW" ".mysql_history" ".goutputstream-SX8LTW" ".xmodmap" ".goutputstream-P2O7ZW" ".goutputstream-EX3GWW" ".goutputstream-IF79TW" ".cpan/" ".goutputstream-9XKMMW" ".hplip/" ".xsession-errors" ".compiz-1/" ".bash_aliases~" ".ido.last~" "perl5/" ".goutputstream-5HLWRW" ".pulse-cookie" ".local/" "Music for dad/" ".goutputstream-1J732W" ".goutputstream-LIGWZW" ".java/" "Desktop/" ".goutputstream-NSDCUW" ".goutputstream-UNF9PW" ".goutputstream-ZT9TNW" ".bundler/" ".goutputstream-GQSIRW" ".bashrc" ".goutputstream-KUTVNW" ".gnome2_private/" "VirtualBox VMs/" ".VirtualBox/" ".cpanm/" ".goutputstream-4CAGNW" ".goutputstream-O06LYW" ".lesshst" ".goutputstream-C0HOVW" ".pip/" ".goutputstream-74C62W" ".goutputstream-AQXRRW" ".goutputstream-67WRRW" ".init.el~" ".goutputstream-1X42SW" ".goutputstream-O5MTWW" "Videos/" ".multisystem-theme" ".goutputstream-SUWIUW" ".msf4/" ".goutputstream-9OD5YW" ".openshot/" ".shotwell/" ".vimrc" ".zcompdump" ".goutputstream-GA0UQW" ".goutputstream-1UXQNW" ".matplotlib/" ".lastpass/" ".goutputstream-8K83WW" ".goutputstream-7A950W" "chef-repo/" ".mozilla/" ".remmina/" ".goutputstream-EXODPW" ".kde/" ".goutputstream-R2YZQW" ".goutputstream-A730WW" ".xsession-errors.old" ".vmware/" "archlinux-2013.10.01-dual.iso" ".thumbnails/" ".aptitude/" "Templates/" ".goutputstream-NQDWVW" ".swo" ".goutputstream-BS6SRW" ".irb-history" ".fontconfig/" ".wireshark/" ".ido.last" ".bash_aliases" ".ssh/" "../" "./")
 
- ("/home/dallas/" (21593 29046 887927 231000) ".dbus/" ".goutputstream-MD40ZW" ".goutputstream-AV0Y0W" "Music/" ".goutputstream-TIARNW" ".eclipse/" ".adobe/" "vim-plugins/" ".ghc/" ".compiz/" ".gnome/" ".gphoto/" ".goutputstream-1IZQSW" ".thunderbird/" "uzbl/" ".pulse/" ".octave_hist" ".goutputstream-LRIM2W" ".goutputstream-1EKCTW" ".goutputstream-AQAKWW" ".goutputstream-ST6NUW" ".dmrc" ".goutputstream-EOSEYW" ".goutputstream-SRUNMW" ".gitconfig" ".bash_logout" ".swp" ".goutputstream-91TDNW" ".goutputstream-J6YWWW" ".fonts/" "org/" ".xmonad/" ".Xauthority" ".gimp-2.8/" ".speech-dispatcher/" ".cabal/" ".goutputstream-FXUIZW" "Stepper_Motor_Lab4/" "Public/" ".bash_history" ".goutputstream-GTJPWW" ".eclim/" ".wine-browser/" ".dvdcss/" ".swt/" ".goutputstream-U090PW" "workspace/" ".mission-control/" ".goutputstream-X5YNVW" ".goutputstream-OW9P2W" ".goutputstream-I9R62W" ".goutputstream-AIKANW" ".goutputstream-7392UW" ".goutputstream-4P8T2W" ".vim/" ".texmf-var/" ".gconf/" ".goutputstream-CIO8WW" ".appletviewer" ".goutputstream-11ZVNW" ".pki/" ".goutputstream-WGTCNW" ".goutputstream-96IXQW" ".cache/" "Documents/" "dotfiles/" ".goutputstream-TK011W" "chef_install" ".goutputstream-H01XQW" ".goutputstream-67LJRW" ".goutputstream-H88FUW" ".goutputstream-GKO2SW" ".goutputstream-AH652W" "armitage-tmp/" ".goutputstream-YON9YW" ".festival_history" ".gem/" ".rvm/" ".goutputstream-YIR9XW" ".face" ".gnome2/" ".goutputstream-PO8CTW" ".dmenu_cache" ".goutputstream-14LARW" ".goutputstream-L3RLTW" ".zprofile" ".goutputstream-6N2BUW" ".tuxguitar-1.2/" "#.xmobarrc#" ".git-credential-cache/" ".profile" ".goutputstream-E1FTQW" ".ICEauthority" ".goutputstream-1X1XSW" ".goutputstream-FR3XMW" "Pictures/" ".goutputstream-A8P2UW" ".asoundrc" ".zshrc" ".goutputstream-RJDHWW" ".icedtea/" ".goutputstream-JX2TOW" ".freerdp/" ".goutputstream-9KGO2W" ".goutputstream-HV17VW" ".config/" ".gtk-bookmarks" ".goutputstream-2MANSW" ".goutputstream-ZX7EWW" ".gvfs/" "StateMonad/" "Tabs/" ".goutputstream-9K3HNW" ".goutputstream-C2ZSYW" ".swn" ".rnd" ".gksu.lock" ".bash_profile" ".audacity-data/" ".goutputstream-BFNJNW" ".goutputstream-VWKJMW" ".gervill/" ".goutputstream-N0S1MW" "SSHKeys/" ".emacs.d/" "Sound_Lab5/" ".multisystem/" ".goutputstream-2XSIPW" ".rpmdb/" ".irssi/" ".armitage.prop" ".goutputstream-3QNDRW" "Downloads/" ".goutputstream-89HYYW" ".xdvirc" "metasploit-latest-linux-installer.run" ".gstreamer-0.10/" ".goutputstream-WPE1SW" ".viminfo" ".xmobarrc" ".macromedia/" ".screenrc" ".goutputstream-DJURMW" ".goutputstream-PDH1XW" "tor-browser_en-US/" ".goutputstream-GABVSW" ".mysql_history" ".goutputstream-SX8LTW" ".xmodmap" ".goutputstream-P2O7ZW" ".goutputstream-EX3GWW" ".goutputstream-IF79TW" ".cpan/" ".goutputstream-9XKMMW" ".hplip/" ".xsession-errors" ".compiz-1/" ".bash_aliases~" ".ido.last~" "perl5/" ".goutputstream-5HLWRW" ".pulse-cookie" ".local/" "Music for dad/" ".goutputstream-1J732W" ".goutputstream-LIGWZW" ".java/" "Desktop/" ".goutputstream-NSDCUW" ".goutputstream-UNF9PW" ".goutputstream-ZT9TNW" ".bundler/" ".goutputstream-GQSIRW" ".bashrc" ".goutputstream-KUTVNW" ".gnome2_private/" "VirtualBox VMs/" ".VirtualBox/" ".cpanm/" ".goutputstream-4CAGNW" ".goutputstream-O06LYW" ".lesshst" ".goutputstream-C0HOVW" ".pip/" ".goutputstream-74C62W" ".goutputstream-AQXRRW" ".goutputstream-67WRRW" ".init.el~" ".goutputstream-1X42SW" ".goutputstream-O5MTWW" "Videos/" ".multisystem-theme" ".goutputstream-SUWIUW" ".msf4/" ".goutputstream-9OD5YW" ".shotwell/" ".vimrc" ".zcompdump" ".goutputstream-GA0UQW" ".goutputstream-1UXQNW" ".matplotlib/" ".lastpass/" ".goutputstream-8K83WW" ".goutputstream-7A950W" "chef-repo/" ".mozilla/" ".remmina/" ".goutputstream-EXODPW" ".kde/" ".goutputstream-R2YZQW" ".goutputstream-A730WW" ".xsession-errors.old" ".vmware/" "archlinux-2013.10.01-dual.iso" ".thumbnails/" ".aptitude/" "Templates/" ".goutputstream-NQDWVW" ".swo" ".goutputstream-BS6SRW" ".irb-history" ".fontconfig/" ".wireshark/" ".ido.last" ".bash_aliases" ".ssh/" "../" "./")
+ ("/home/dallas/Documents/resume/tex/new-res/" (21601 10459 736637 142000) "./" "../" "resume.aux" "resume.pdf" "resume.log" "resume.tex")
 
- ("/home/dallas/Documents/" (21592 11179 876645 749000) "notes/" ".sort.java.swp" "history/" "basedrive/" "test.txt" "445l/" "./" "bacon_pancakes_team01_report.pdf" "games/" "mus307/" "fonts/" "dotfiles/" "python/" "resume/" "mythology/" "automata/" "praetorian/" "cs349/" "haskell/" "emacs/" "../" "multiboot/" "comedy/" "infosec/" "doug.jpg" "ee333T/" "comsoc/" "cs439H/" "home-chef-repo/" "scripts/" "songs/" "terry/" "tx_gas_account.txt" "tools/" "torrents/" "jokes/" "EE460N/" "perl_lec/" "algorithms/" "422c/" "lisp_projects/" "PerlProjects/" "vms/" "NetworkSecurity/" "higherOrderPerlExamples/" "geniusIdeas/" "ee316/")
+ ("/home/dallas/Documents/resume/tex/" (21601 9826 36610 870000) "resume._aux" "./" "resume.tex.project.vim" "res.cls" "../" "resume.aux" "resume.pdf" "resume.log" "new-res/" "helvetica.sty" "resume._log" "resume.tex")
 
- ("/home/dallas/Documents/mythology/" (21586 55379 978614 286000) "10-16-14-lec_notes.out" "10-14-14-lec_notes.tex" "10-14-14-lec_notes.out" "10-21-14-lec_notes.toc" "build_pdfs.sh" "10-28-14-lec_notes.aux" "./" "10-2-14-lec_notes.aux" "myth.pdf" "10-28-14-lec_notes.tex" "10-16-14-lec_notes.aux" "10-2-14-lec_notes.log" "10-14-14-lec_notes.org" "10-16-14-lec_notes.org" "10-2-14-lec_notes.org" "10-28-14-lec_notes.out" "texput.log" "9-16-14-lec_notes.txt" "10-14-14-lec_notes.toc" "10-7-14-lec_notes.aux" "../" "10-2-14-lec_notes.toc" "10-16-14-lec_notes.log" "10-7-14-lec_notes.out" "10-2-14-lec_notes.out" "10-21-14-lec_notes.log" "10-2-14-lec_notes.tex" "10-7-14-lec_notes.org" "10-21-14-lec_notes.org" "10-7-14-lec_notes.tex" "pdfs/" "10-16-14-lec_notes.toc" "10-14-14-lec_notes.log" "10-7-14-lec_notes.log" "10-16-14-lec_notes.tex" "10-21-14-lec_notes.tex" "10-14-14-lec_notes.aux" "10-28-14-lec_notes.log" "9-11-14-lec_notes.txt" "10-28-14-lec_notes.toc" "10-7-14-lec_notes.toc" "10-21-14-lec_notes.aux" "exam2_notes.org" "10-21-14-lec_notes.out" "discussions/")
+ ("/bin/" (21564 34523 323746 314000) "fgconsole" "true" "lsblk" "ntfs-3g" "pax" "dd" "mount" "zless" "ntfsmftalloc" "nc.openbsd" "ls" "su" "plymouth-upstart-bridge" "kbd_mode" "ntfs-3g.secaudit" "rbash" "mt-gnu" "./" "lessfile" "kill" "bzip2recover" "fuser" "running-in-container" "ntfsmove" "gunzip" "rm" "ntfs-3g.usermap" "sync" "netstat" "lesspipe" "ntfsls" "unicode_start" "chacl" "ps" "zegrep" "ntfsdecrypt" "dbus-uuidgen" "domainname" "gzip" "static-sh" "mktemp" "bzegrep" "findmnt" "netcat" "date" "bzexe" "which" "grep" "more" "run-parts" "bzdiff" "ping" "plymouth" "bzip2" "loadkeys" "tar" "vmmouse_detect" "tempfile" "lsmod" "init-checkconf" "bzgrep" "busybox" "nc" "znew" "mountpoint" "../" "zcmp" "ed" "open" "tailf" "paxtar" "ypdomainname" "rmdir" "ntfsck" "fgrep" "touch" "ksh" "bzcat" "mt" "lesskey" "pidof" "chown" "cat" "zsh4" "bash" "lowntfs-3g" "rnano" "zmore" "zcat" "nisdomainname" "false" "fusermount" "bzfgrep" "ulockmgr_server" "hostname" "dir" "ntfstruncate" "bzcmp" "egrep" "whiptail" "bzless" "dash" "zgrep" "bunzip2" "vdir" "umount" "sleep" "df" "getfacl" "pwd" "ss" "cp" "cpio" "dbus-cleanup-sockets" "setfont" "gzexe" "echo" "ntfswipe" "ip" "uname" "ntfsdump_logfile" "ntfsfix" "ntfsinfo" "readlink" "zsh" "setfacl" "mv" "ntfscluster" "sh" "stty" "mkdir" "ping6" "ntfscmp" "rzsh" "less" "lessecho" "dbus-daemon" "zforce" "chvt" "zdiff" "paxcpio" "openvt" "login" "nano" "dumpkeys" "dnsdomainname" "ntfscat" "ln" "mknod" "sed" "initctl2dot" "chgrp" "dmesg" "setupcon" "chmod" "sh.distrib" "uncompress" "bzmore" "ntfs-3g.probe" "zfgrep" "nc.traditional")
+
+ ("/home/dallas/.emacs.d/" (21597 1969 572416 873000) "eshell/" "init.el" "./" "init.org" "auto-save-list/" "../" "evil-extra-operator-master/" "elpa/" "tramp" ".emacs-backups/")
+
+ ("/home/dallas/dotfiles/emacs/.emacs.d/" (21597 1969 572416 873000) "eshell/" "init.el" "./" "init.org" "auto-save-list/" "../" "evil-extra-operator-master/" "elpa/" "tramp" ".emacs-backups/")
+
+ ("/home/dallas/Documents/infosec/" (21600 8609 820547 468000) "findings.pdf" "./" "findings.org" "../" "findings.out" "parchment_screenshots/" "findings.log" "findings.tex" "findings.toc" "findings.aux")
+
+ ("/home/dallas/dotfiles/xmobar/" (21600 9112 8543 953000) "./" "../" ".xmobarrc")
+
+ ("/home/dallas/Documents/tools/sqlmap/sqlmap-dev/" (21600 2971 684586 929000) "plugins/" "CONTRIBUTING.md" "./" "sqlmapapi.py" "gradebook.txt" "README.md" ".gitattributes" "extra/" "assignment.txt" "txt/" "doc/" "xml/" "sqlmap.conf" "shell/" "../" "waf/" "messages.txt" ".gitignore" "output/" "procs/" "sqlmap.py" "udf/" ".git/" "tamper/" "lib/" "thirdparty/")
+
+ ("/home/dallas/Documents/tools/sqlmap/" (21084 52873 384912 459000) "./" "sqlmap-dev/" "../")
+
+ ("/home/dallas/Documents/tools/" (21598 27262 413063 613000) "rockyou.txt" "webserv" "ls" "burp/" "ruby" "DirBuster-0.12/" "hashcat/" "realhuman_phill.txt" "crackstation-human-only.txt.gz" "sqlmap/" "cd" "../" "./")
+
+ ("/home/dallas/Documents/" (21597 47814 287079 84000) "notes/" ".sort.java.swp" "history/" "basedrive/" "test.txt" "445l/" "./" "bacon_pancakes_team01_report.pdf" "games/" "mus307/" "fonts/" "dotfiles/" "python/" "resume/" "mythology/" "automata/" "praetorian/" "cs349/" "haskell/" "emacs/" "../" "multiboot/" "comedy/" "infosec/" "doug.jpg" "ee333T/" "comsoc/" "cs439H/" "home-chef-repo/" "scripts/" "songs/" "terry/" "tx_gas_account.txt" "tools/" "torrents/" "jokes/" "EE460N/" "perl_lec/" "algorithms/" "422c/" "lisp_projects/" "PerlProjects/" "vms/" "NetworkSecurity/" "higherOrderPerlExamples/" "geniusIdeas/" "ee316/")
+
+ ("/home/dallas/Documents/mythology/" (21595 52782 737483 124000) "10-16-14-lec_notes.out" "11-4-14-lec_notes.org" "10-14-14-lec_notes.tex" "11-6-14-lec_notes.toc" "10-14-14-lec_notes.out" "10-21-14-lec_notes.toc" "11-6-14-lec_notes.aux" "build_pdfs.sh" "10-28-14-lec_notes.aux" "./" "10-2-14-lec_notes.aux" "myth.pdf" "10-28-14-lec_notes.tex" "10-16-14-lec_notes.aux" "10-2-14-lec_notes.log" "10-14-14-lec_notes.org" "10-16-14-lec_notes.org" "10-2-14-lec_notes.org" "10-28-14-lec_notes.out" "texput.log" "11-6-14-lec_notes.org" "9-16-14-lec_notes.txt" "10-14-14-lec_notes.toc" "10-7-14-lec_notes.aux" "../" "10-2-14-lec_notes.toc" "10-16-14-lec_notes.log" "10-7-14-lec_notes.out" "10-2-14-lec_notes.out" "10-21-14-lec_notes.log" "11-6-14-lec_notes.tex" "10-2-14-lec_notes.tex" "10-7-14-lec_notes.org" "10-21-14-lec_notes.org" "10-7-14-lec_notes.tex" "11-6-14-lec_notes.out" "pdfs/" "10-16-14-lec_notes.toc" "10-14-14-lec_notes.log" "10-7-14-lec_notes.log" "10-16-14-lec_notes.tex" "10-21-14-lec_notes.tex" "10-14-14-lec_notes.aux" "10-28-14-lec_notes.log" "9-11-14-lec_notes.txt" "11-6-14-lec_notes.log" "10-28-14-lec_notes.toc" "10-7-14-lec_notes.toc" "10-21-14-lec_notes.aux" "exam2_notes.org" "10-21-14-lec_notes.out" "discussions/")
+
+ ("/home/dallas/dotfiles/xmonad/.xmonad/" (21595 9045 1487 639000) "./" "xmonad.hi" "../" "xmonad.hs" "xmonad-i386-linux" "xmonad.errors" "xmonad.o")
+
+ ("/home/dallas/.xmonad/" (21595 9045 1487 639000) "./" "xmonad.hi" "../" "xmonad.hs" "xmonad-i386-linux" "xmonad.errors" "xmonad.o")
 
  ("/home/dallas/Documents/cs349/video/" (21586 25157 604626 65000) "./" "progress-report.aux" "progress-report.tex" "progress-report.pdf" "../" "progress-report.toc" "progress-report.out" "progress-report.org" "progress-report.log")
-
- ("/home/dallas/.emacs.d/" (21592 1647 968160 392000) "eshell/" "init.el" "./" "init.org" "auto-save-list/" "../" "evil-extra-operator-master/" "elpa/" ".emacs-backups/")
-
- ("/home/dallas/Documents/resume/tex/" (21591 63340 127180 601000) "resume._aux" "./" "resume.tex.project.vim" "res.cls" "../" "resume.aux" "resume.pdf" "resume.log" "helvetica.sty" "resume._log" "resume.tex")
-
- ("/home/dallas/dotfiles/xmobar/" (21592 821 4126 107000) "./" "#.xmobarrc#" "../" ".xmobarrc")
-
- ("/home/dallas/dotfiles/emacs/.emacs.d/" (21592 1647 968160 392000) "eshell/" "init.el" "./" "init.org" "auto-save-list/" "../" "evil-extra-operator-master/" "elpa/" ".emacs-backups/")
-
- ("/home/dallas/.xmonad/" (21592 3168 307005 302000) "./" "xmonad.hi" "../" "xmonad.hs" "xmonad-i386-linux" "xmonad.errors" "xmonad.o")
-
- ("/home/dallas/dotfiles/xmonad/.xmonad/" (21592 3168 307005 302000) "./" "xmonad.hi" "../" "xmonad.hs" "xmonad-i386-linux" "xmonad.errors" "xmonad.o")
 
  ("/home/dallas/dotfiles/xmonad/" (21586 56100 522644 161000) "./" ".xmonad/" "../")
 

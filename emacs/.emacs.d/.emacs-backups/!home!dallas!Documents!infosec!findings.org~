@@ -12,6 +12,10 @@
   - /dev folder contains a file with the database table information
   - /dev folder has a file called important_stuff.php (we'll see what that means)
   - Page gradebook.php is possibly sql injectable
+  - A sql string of team5'or/**/1=1-- led to a complete listing of all members in the gradebook
+  - database is Postgresql 9.1.13
     
 
 
+
+  

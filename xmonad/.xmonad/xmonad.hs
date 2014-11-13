@@ -21,12 +21,9 @@ main = do
                         }
         , modMask = mod4Mask 
         } 
-        `removeKeysP` 
-        ["M4-" ++ n | n <- unwantedKeys ]
-        `additionalKeysP` 
-        addedKeys
+        `removeKeysP` ["M4-" ++ n | n <- unwantedKeys ]
+        `additionalKeysP` addedKeys
         
-
 myTerminal = "xterm"
 
 myWorkspaces = ["1:main" 
@@ -46,8 +43,14 @@ addedKeys = [("M4-r", spawn "dmenu_run")
             ,("M4-n", nextWS)
             ,("M4-p", prevWS)
             ,("M4-<Tab>", toggleWS)
+            ,("M4-s M4-l", spawn "xscreensaver-command --lock")
+            ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
             ]
 
+-- Find a better way to do this stuff, but for now, it works...
 startup :: X ()
 startup = do
+  spawn "emacs --daemon"
+  spawn "xmodmap ~/.xmodmap"
+  spawn "xscreensaver -no-splash &"
   spawn "xterm"

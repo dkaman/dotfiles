@@ -5,6 +5,7 @@ import XMonad.Util.Run(spawnPipe)
 import System.IO
 import XMonad.Util.EZConfig
 import XMonad.Actions.CycleWS
+import XMonad.Layout.Spacing
 
 main = do
     xmproc <- spawnPipe "xmobar /home/dallas/.xmobarrc"
@@ -12,8 +13,9 @@ main = do
         { terminal = myTerminal 
         , workspaces = myWorkspaces
         , focusedBorderColor = myFocusedBorderColor
+        , borderWidth = 2
         , manageHook = manageDocks <+> manageHook defaultConfig
-        , layoutHook = avoidStruts  $  layoutHook defaultConfig
+        , layoutHook = avoidStruts  $  spacing 2 $ layoutHook defaultConfig
         , startupHook = startup
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc

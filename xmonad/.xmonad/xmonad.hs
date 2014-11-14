@@ -8,6 +8,8 @@ import XMonad.Util.EZConfig
 import XMonad.Actions.CycleWS
 import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
+import qualified XMonad.Actions.Search as S
+import XMonad.Prompt
 
 main = do
     xmproc <- spawnPipe "xmobar /home/dallas/.xmobarrc"
@@ -37,6 +39,7 @@ startup = do
     spawn "xterm"
 
 myTerminal = "xterm"
+myBrowser = "uzbl-tabbed"
 
 myWorkspaces = ["1:main" 
                ,"2:web" 
@@ -61,7 +64,14 @@ addedKeys = [("M4-r", spawn "dmenu_run")
             ,("M4-s M4-l", spawn "xscreensaver-command --lock")
             ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
             ,("M4-<Return>", spawn "xterm -e /home/dallas/scripts/screen.sh")
-            ]
+            ] 
+            ++ [("M4-s M4-" ++ k, S.promptSearchBrowser defaultXPConfig myBrowser f) | (k,f) <- searchEngines]
+               where searchEngines = [ ("g", S.google)
+                                     , ("d", S.searchEngine "DuckDuckGo" "https://duckduckgo.com/?q=")
+                                     , ("w", S.searchEngine "Wikipedia" "http://en.wikipedia.org/wiki/Special:Search?search=")
+                                     , ("a", S.searchEngine "ArchWiki" "http://wiki.archlinux.org/index.php/Special:Search?search=")
+                                     ]
 
 myManageHook = composeAll [
                ]
+

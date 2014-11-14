@@ -6,6 +6,7 @@ import System.IO
 import XMonad.Util.EZConfig
 import XMonad.Actions.CycleWS
 import XMonad.Layout.Spacing
+import XMonad.Layout.NoBorders
 
 main = do
     xmproc <- spawnPipe "xmobar /home/dallas/.xmobarrc"
@@ -15,7 +16,7 @@ main = do
         , focusedBorderColor = myFocusedBorderColor
         , borderWidth = 2
         , manageHook = manageDocks <+> manageHook defaultConfig
-        , layoutHook = avoidStruts  $  spacing 2 $ layoutHook defaultConfig
+        , layoutHook = avoidStruts $ smartBorders $ spacing 2 $ layoutHook defaultConfig
         , startupHook = startup
         , logHook = dynamicLogWithPP xmobarPP
                         { ppOutput = hPutStrLn xmproc
@@ -26,13 +27,22 @@ main = do
         `removeKeysP` ["M4-" ++ n | n <- unwantedKeys ]
         `additionalKeysP` addedKeys
         
+-- Find a better way to do this stuff, but for now, it works...
+startup :: X ()
+startup = do
+    spawn "emacs --daemon"
+    spawn "xmodmap ~/.xmodmap"
+    spawn "xscreensaver -no-splash &"
+    spawn "xterm"
+
 myTerminal = "xterm"
 
 myWorkspaces = ["1:main" 
                ,"2:web" 
                ,"3:emacs" 
                ,"4:term" 
-               ,"5:media"]
+               ,"5:media"
+               ]
 
 myFocusedBorderColor = "#85E0FF"
 
@@ -49,10 +59,3 @@ addedKeys = [("M4-r", spawn "dmenu_run")
             ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
             ]
 
--- Find a better way to do this stuff, but for now, it works...
-startup :: X ()
-startup = do
-  spawn "emacs --daemon"
-  spawn "xmodmap ~/.xmodmap"
-  spawn "xscreensaver -no-splash &"
-  spawn "xterm"

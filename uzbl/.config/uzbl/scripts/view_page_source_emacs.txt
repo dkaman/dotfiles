@@ -1,0 +1,2 @@
+download @uri /tmp/uzbl/uzbl_page_source.html
+sh 'emacs /tmp/uzbl/uzbl_page_source.html'

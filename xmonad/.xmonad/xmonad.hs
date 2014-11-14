@@ -1,6 +1,7 @@
 import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.ManageHook
 import XMonad.Util.Run(spawnPipe)
 import System.IO
 import XMonad.Util.EZConfig
@@ -15,7 +16,7 @@ main = do
         , workspaces = myWorkspaces
         , focusedBorderColor = myFocusedBorderColor
         , borderWidth = 2
-        , manageHook = manageDocks <+> manageHook defaultConfig
+        , manageHook =  manageHook defaultConfig <+> manageDocks <+> myManageHook
         , layoutHook = avoidStruts $ smartBorders $ spacing 2 $ layoutHook defaultConfig
         , startupHook = startup
         , logHook = dynamicLogWithPP xmobarPP
@@ -47,15 +48,20 @@ myWorkspaces = ["1:main"
 myFocusedBorderColor = "#85E0FF"
 
 unwantedKeys = ["p"  -- You guys should be ashamed of yourselves
+               ,"n"
                ,"<Tab>" 
-               ,"Return"
+               ,"<Return>"
                ]
 
 addedKeys = [("M4-r", spawn "dmenu_run")
+            ,("M4-=", refresh) -- why doesn't this work?
             ,("M4-n", nextWS)
             ,("M4-p", prevWS)
             ,("M4-<Tab>", toggleWS)
             ,("M4-s M4-l", spawn "xscreensaver-command --lock")
             ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
+            ,("M4-<Return>", spawn "xterm -e /home/dallas/scripts/screen.sh")
             ]
 
+myManageHook = composeAll [
+               ]

@@ -1,6 +1,6 @@
 Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
-       , bgColor = "black"
-       , fgColor = "grey"
+       , bgColor = "#000000"
+       , fgColor = "#FFFFFF"
        , position = TopW L 100
        , commands = [ Run Weather "KAUS" ["-t"," <tempF>F"
        	 	      	  	  	 ,"-L","64"
@@ -37,5 +37,5 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
        , lowerOnStart = True
        , border = BottomB 
        , borderColor = "#85E0FF"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %battery% | %date% | %KAUS%"
+       , template = "%StdinReader% }{ %cpu% <fc=#00008A>|</fc> %memory% <fc=#00008A>|</fc> %battery% <fc=#00008A>|</fc> %date% <fc=#00008A>|</fc> %KAUS%"
        }

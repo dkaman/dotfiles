@@ -1,46 +1,34 @@
+
 import XMonad
+import System.IO
+
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.ManageHook
+
 import XMonad.Util.Run(spawnPipe)
-import System.IO
 import XMonad.Util.EZConfig
+
+import qualified XMonad.Actions.Search as S
 import XMonad.Actions.CycleWS
+
 import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
-import qualified XMonad.Actions.Search as S
-import XMonad.Prompt
 
-main = do
-    xmproc <- spawnPipe "xmobar /home/dallas/.xmobarrc"
-    xmonad $ defaultConfig
-        { terminal = myTerminal 
-        , workspaces = myWorkspaces
-        , focusedBorderColor = myFocusedBorderColor
-        , borderWidth = 2
-        , manageHook =  manageHook defaultConfig <+> manageDocks <+> myManageHook
-        , layoutHook = avoidStruts $ smartBorders $ spacing 2 $ layoutHook defaultConfig
-        , startupHook = startup
-        , logHook = dynamicLogWithPP xmobarPP
-                        { ppOutput = hPutStrLn xmproc
-                        , ppTitle = xmobarColor "purple" "" . shorten 50
-                        }
-        , modMask = mod4Mask 
-        } 
-        `removeKeysP` ["M4-" ++ n | n <- unwantedKeys ]
-        `additionalKeysP` addedKeys
-        
--- Find a better way to do this stuff, but for now, it works...
-startup :: X ()
-startup = do
-    spawn "emacs --daemon"
-    spawn "xmodmap ~/.xmodmap"
-    spawn "xscreensaver -no-splash &"
-    spawn "xterm"
+import XMonad.Prompt
 
 myTerminal = "xterm"
 myBrowser = "uzbl-tabbed"
 
+myHighlight = "#00FF00"
+myLowlight = "#00008A"
+myEmpty = "#999999"
+myVisible = "#FFFF00"
+myForeground = "#FFFFFF"
+myBackground = "#000000"
+myAccent = "#85E0FF"
+
+myBar = "xmobar /home/dallas/.xmobarrc"
+myBorderWidth = 2
 myWorkspaces = ["1:main" 
                ,"2:web" 
                ,"3:emacs" 
@@ -48,7 +36,30 @@ myWorkspaces = ["1:main"
                ,"5:media"
                ]
 
-myFocusedBorderColor = "#85E0FF"
+main = do
+    h <- spawnPipe myBar -- used in logHook 
+    xmonad $ defaultConfig
+        { terminal = myTerminal 
+        , workspaces = myWorkspaces
+        , focusedBorderColor = myAccent
+        , borderWidth = myBorderWidth
+        , manageHook =  manageHook defaultConfig <+> manageDocks <+> myManageHook
+        , layoutHook = avoidStruts $ 
+                       smartBorders $ 
+                       spacing 2 $ 
+                       layoutHook defaultConfig
+        , startupHook = myStartup
+        , logHook = myLogHook h
+        , modMask = mod4Mask 
+        } 
+        `removeKeysP` ["M4-" ++ n | n <- unwantedKeys ]
+        `additionalKeysP` addedKeys
+
+myStartup = do
+    spawn "emacs --daemon"
+    spawn "xmodmap ~/.xmodmap"
+    spawn "xscreensaver -no-splash &"
+    spawn "xterm"
 
 unwantedKeys = ["p"  -- You guys should be ashamed of yourselves
                ,"n"
@@ -65,7 +76,8 @@ addedKeys = [("M4-r", spawn "dmenu_run")
             ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
             ,("M4-<Return>", spawn "xterm -e /home/dallas/scripts/screen.sh")
             ] 
-            ++ [("M4-s M4-" ++ k, S.promptSearchBrowser defaultXPConfig myBrowser f) | (k,f) <- searchEngines]
+            -- Search functionality (thanks tylevad on Github!)
+            ++ [("M4-s M4-" ++ k, S.promptSearchBrowser myXPConfig myBrowser f) | (k,f) <- searchEngines]
                where searchEngines = [ ("g", S.google)
                                      , ("d", S.searchEngine "DuckDuckGo" "https://duckduckgo.com/?q=")
                                      , ("w", S.searchEngine "Wikipedia" "http://en.wikipedia.org/wiki/Special:Search?search=")
@@ -73,5 +85,31 @@ addedKeys = [("M4-r", spawn "dmenu_run")
                                      ]
 
 myManageHook = composeAll [
-               ]
+                          ]
+
+myLogHook h = (dynamicLogWithPP $ myPP h)
+
+myPP h = xmobarPP
+  { ppCurrent         = xmobarColor myEmpty "" . wrap "{" "}" . xmobarColor myHighlight ""
+  , ppVisible         = xmobarColor myEmpty "" . wrap "[" "]" . xmobarColor myVisible ""
+  , ppHidden          = xmobarColor myForeground ""
+  , ppHiddenNoWindows = xmobarColor myEmpty ""
+  , ppTitle           = xmobarColor myForeground "" . shorten 130
+  , ppLayout          = xmobarColor myAccent ""
+  , ppSep             = " <fc=" ++ myLowlight ++ ">|</fc> "
+  , ppWsSep           = " "
+  , ppOutput          = hPutStrLn h
+  }
+
+myXPConfig = defaultXPConfig
+  { fgColor = myForeground
+  , bgColor = myBackground
+  , bgHLight = myBackground
+  , fgHLight = myAccent
+  , borderColor = myAccent
+  , position = Bottom
+  , historySize = 3
+  , height = 16
+  }
+
 

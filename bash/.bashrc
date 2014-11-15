@@ -5,7 +5,8 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export EDITOR="emacs"
+export EDITOR="emacsclient -c -a emacs "
+export BROWSER="uzbl-tabbed"
 alias ls='ls --color=auto'
 alias l='ls -lAh'
 
@@ -23,8 +24,6 @@ export PATH="/home/dallas/.cabal/bin:$PATH"
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1="\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0m\]\[\e[00;37m\] \[\e[0m\]\[\e[00;35m\]\@\[\e[0m\]\[\e[00;37m\] [\[\e[0m\]\[\e[00;33m\]\w\[\e[0m\]\[\e[00;37m\]]\n:> \[\e[0m\]"
 
-export ALTERNATE_EDITOR=""
-export EDITOR=emacsclient
 alias et="emacsclient -t "                      # used to be "emacs -nw"
 alias ew="emacsclient -c -a emacs "
 

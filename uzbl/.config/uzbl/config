@@ -304,6 +304,7 @@ set ebind     = @mode_bind global,-insert
 @cbind  !dump              = sh 'echo dump_config > "$UZBL_FIFO"'
 # Reload all variables in the config
 @cbind  !reload            = sh "sed '/^# === Post-load misc commands/,$d' \"$UZBL_CONFIG\" | grep '^set ' > \"$UZBL_FIFO\""
+
 # view page source
 @cbind vs                  = include @config_home/uzbl/scripts/view_page_source_emacs.txt
 @ibind <Ctrl>j                  = event ESCAPE

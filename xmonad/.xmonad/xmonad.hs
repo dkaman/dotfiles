@@ -4,12 +4,16 @@ import System.IO
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.FloatNext
 
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig
 
 import qualified XMonad.Actions.Search as S
 import XMonad.Actions.CycleWS
+import XMonad.Actions.WindowBringer
+import XMonad.Actions.WindowGo
+import XMonad.Actions.Volume
 
 import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
@@ -75,12 +79,19 @@ addedKeys = [("M4-r", spawn "dmenu_run")
             ,("M4-s M4-l", spawn "xscreensaver-command --lock")
             ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
             ,("M4-<Return>", spawn "xterm -e /home/dallas/scripts/screen.sh")
+            ,("M4-w g", gotoMenu)
+            ,("M4-w b", bringMenu)
+            ,("M4-<F1>", runOrRaise "emacsclient -c -a emacs " (className =? "Emacs"))
+            ,("M4-<F2>", runOrRaise "uzbl-tabbed" (className =? "Uzbl-tabbed"))
+            ,("M4-<F12>", spawn "xterm -e alsamixer")
+            ,("M4-S-<F12>", spawn "amixer -D pulse set Master toggle")
             ] 
             -- Search functionality (thanks tylevad on Github!)
-            ++ [("M4-s M4-" ++ k, S.promptSearchBrowser myXPConfig myBrowser f) | (k,f) <- searchEngines]
+            ++ [("M4-s " ++ k, S.promptSearchBrowser myXPConfig myBrowser f) | (k,f) <- searchEngines]
                where searchEngines = [ ("g", S.google)
                                      , ("d", S.searchEngine "DuckDuckGo" "https://duckduckgo.com/?q=")
                                      , ("w", S.searchEngine "Wikipedia" "http://en.wikipedia.org/wiki/Special:Search?search=")
+                                     , ("y", S.searchEngine "YouTube" "https://www.youtube.com/results?search_query=")
                                      , ("a", S.searchEngine "ArchWiki" "http://wiki.archlinux.org/index.php/Special:Search?search=")
                                      ]
 
@@ -108,7 +119,7 @@ myXPConfig = defaultXPConfig
   , fgHLight = myAccent
   , borderColor = myAccent
   , position = Bottom
-  , historySize = 3
+  , historySize = 0
   , height = 16
   }
 

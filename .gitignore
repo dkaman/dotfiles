@@ -1,3 +1,4 @@
 vim/.vim/views/*
 emacs/.emacs.d/.emacs-backups/*
 emacs/.emacs.d/auto-save-list/*
+xmonad/.xmonad/history

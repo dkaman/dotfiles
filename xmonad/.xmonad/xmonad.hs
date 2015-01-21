@@ -5,7 +5,6 @@ import qualified XMonad.StackSet as W
 
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
-import XMonad.Hooks.FloatNext
 
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig
@@ -81,7 +80,7 @@ addedKeys = [("M4-r", spawn "dmenu_run")
             ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
             ,("M4-w g", gotoMenu)
             ,("M4-w b", bringMenu)
-            ,("M4-<F1>", runOrRaise "emacsclient -c -a emacs " (className =? "Emacs"))
+            ,("M4-<F1>", runOrRaise "emacsclient -a emacs -nc" (className =? "Emacs"))
             ,("M4-<F2>", runOrRaise "uzbl-tabbed" (className =? "Uzbl-tabbed"))
             ,("M4-<F12>", namedScratchpadAction myScratchpads "alsamixer")
             ,("M4-S-<F12>", spawn "amixer -D pulse set Master toggle")
@@ -91,11 +90,11 @@ addedKeys = [("M4-r", spawn "dmenu_run")
             ] 
             -- Search functionality (thanks tylevad on Github!)
             ++ [("M4-s " ++ k, S.promptSearchBrowser myXPConfig myBrowser f) | (k,f) <- searchEngines]
-               where searchEngines = [ ("g", S.google)
-                                     , ("d", S.searchEngine "DuckDuckGo" "https://duckduckgo.com/?q=")
-                                     , ("w", S.searchEngine "Wikipedia" "http://en.wikipedia.org/wiki/Special:Search?search=")
-                                     , ("y", S.searchEngine "YouTube" "https://www.youtube.com/results?search_query=")
-                                     , ("a", S.searchEngine "ArchWiki" "http://wiki.archlinux.org/index.php/Special:Search?search=")
+               where searchEngines = [("g", S.google)
+                                     ,("d", S.searchEngine "DuckDuckGo" "https://duckduckgo.com/?q=")
+                                     ,("w", S.searchEngine "Wikipedia" "http://en.wikipedia.org/wiki/Special:Search?search=")
+                                     ,("y", S.searchEngine "YouTube" "https://www.youtube.com/results?search_query=")
+                                     ,("a", S.searchEngine "ArchWiki" "http://wiki.archlinux.org/index.php/Special:Search?search=")
                                      ]
 
 myManageHook = composeAll [ manageDocks

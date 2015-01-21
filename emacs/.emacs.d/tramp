@@ -1,4 +1,4 @@
-;; -*- emacs-lisp -*- <14/11/14 13:19:48 /home/dallas/.emacs.d/tramp>
+;; -*- emacs-lisp -*- <15/01/14 16:33:27 /home/dallas/.emacs.d/tramp>
 ;; Tramp connection history.  Don't change this file.
 ;; You can delete it, forcing Tramp to reapply the checks.
 
@@ -20,4 +20,6 @@
   ("gid-integer" 20)
   ("file-exists" "test -e")
   ("readlink" nil)
-  ("uid-integer" 3850)))
+  ("uid-integer" 3850))
+ (["scpc" "dallas" "lannister" nil nil]
+  nil))

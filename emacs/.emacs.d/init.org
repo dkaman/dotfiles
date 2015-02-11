@@ -207,7 +207,8 @@
     (org-babel-do-load-languages
      'org-babel-load-languages
      '(;; other Babel languages
-       (plantuml . t)))
+       (gnuplot . t)
+       (plantuml . t))) 
 
     (setq org-plantuml-jar-path
 	  (expand-file-name "/home/dallas/Documents/EE460N/res/plantuml.jar"))

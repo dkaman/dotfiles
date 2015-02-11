@@ -23,6 +23,8 @@ import XMonad.Layout.NoBorders
 
 import XMonad.Prompt
 
+import Control.Monad
+
 myTerminal = "xterm"
 myBrowser = "uzbl-tabbed"
 
@@ -36,12 +38,7 @@ myAccent = "#85E0FF"
 
 myBar = "xmobar /home/dallas/.xmobarrc"
 myBorderWidth = 2
-myWorkspaces = ["1" 
-               ,"2"
-               ,"3"
-               ,"4"
-               ,"5"
-               ]
+myWorkspaces = ["1" ,"2" ,"3" ,"4" ,"5"]
 
 main = do
     h <- spawnPipe myBar -- used in logHook 
@@ -51,19 +48,20 @@ main = do
         , focusedBorderColor = myAccent
         , borderWidth = myBorderWidth
         , manageHook =  myManageHook
-        , layoutHook = avoidStruts $ 
-                       smartBorders $ 
-                       spacing 2 $ 
-                       layoutHook defaultConfig
+        , layoutHook = avoidStruts $ smartBorders $ spacing 2 $ layoutHook defaultConfig
         , startupHook = myStartup
         , logHook = myLogHook h
         , modMask = mod4Mask 
-        } 
-        `additionalKeysP` addedKeys
+        } `additionalKeysP` addedKeys
 
 myScratchpads = [ NS "alsamixer" "xterm -e alsamixer" (title =? "alsamixer") (customFloating $ W.RationalRect 0.6 0.1 0.35 0.5)
                 , NS "xterm" "xterm -name scratchterm" (title =? "scratchterm") (customFloating $ W.RationalRect 0.05 0.8 0.9 0.15)
                 ]
+
+toggleSkip :: [WorkspaceId] -> X ()
+toggleSkip skips = do
+    hs <- gets (flip skipTags skips . W.hidden . windowset)
+    unless (null hs) (windows . W.view . W.tag $ head hs)
 
 myStartup = do
     spawn "emacs --daemon"
@@ -72,19 +70,18 @@ myStartup = do
     spawn "xterm"
 
 addedKeys = [("M4-r", spawn "dmenu_run")
-            ,("M4-=", refresh) -- why doesn't this work?
             ,("M4-n", nextWS)
             ,("M4-p", prevWS)
-            ,("M4-<Tab>", toggleWS)
+            ,("M4-`", gotoMenu)
+            ,("M4-<Tab>", toggleSkip ["NSP"])
             ,("M4-s M4-l", spawn "xscreensaver-command --lock")
             ,("M4-s M4-s", spawn "scrot ~/Documents/screenshots/%Y-%m-%d-%T-screenshot.png")
-            ,("M4-w g", gotoMenu)
-            ,("M4-w b", bringMenu)
-            ,("M4-<F1>", runOrRaise "emacsclient -a emacs -nc" (className =? "Emacs"))
-            ,("M4-<F2>", runOrRaise "uzbl-tabbed" (className =? "Uzbl-tabbed"))
+            ,("M4-<F1>", runOrRaise "google-chrome" (className =? "Google-chrome"))
+            ,("M4-<F2>", runOrRaise "emacs" (className =? "Emacs"))
+            ,("M4-<F3>", runOrRaise "nautilus" (className =? "Nautilus"))
+            ,("M4-<F4>", runOrRaise "vlc" (className =? "vlc"))
             ,("M4-<F12>", namedScratchpadAction myScratchpads "alsamixer")
             ,("M4-S-<F12>", spawn "amixer -D pulse set Master toggle")
-            ,("M4-x M4-k", spawn "xkill")
             ,("M4-<Return>", namedScratchpadAction myScratchpads "xterm")
             ,("M4-S-<Return>", spawn "xterm -e /home/dallas/scripts/screen.sh")
             ] 

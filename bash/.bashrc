@@ -27,6 +27,8 @@ export PS1="\[\e[00;31m\]\u\[\e[0m\]\[\e[00;37m\]@\[\e[0m\]\[\e[00;36m\]\h\[\e[0
 alias et="emacsclient -t "                      # used to be "emacs -nw"
 alias ew="emacsclient -c -a emacs "
 
+alias webserv="ruby -rwebrick -e'WEBrick::HTTPServer.new(:Port => 3000, :DocumentRoot => Dir.pwd).start'"
+
 PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

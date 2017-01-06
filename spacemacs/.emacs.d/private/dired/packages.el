@@ -77,4 +77,3 @@
       (dired current-directory)))
 
   (define-key evil-normal-state-map (kbd "ZZ") 'kill-and-dired-jump))
-

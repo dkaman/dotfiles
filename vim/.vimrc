@@ -147,11 +147,10 @@ colorscheme darkocean
     "---Paste from the system clipboard
     nmap <Leader>p "*p
 
+    "---Exit 1 (kill git commits etc.)
+    nmap <Leader>ee ;cq<CR>
 
 "---Colon commands
 
     "---Write with sudo!
     cmap w!! !sudo tee % >/dev/null
-
-
-

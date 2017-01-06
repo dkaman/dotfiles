@@ -60,86 +60,117 @@ Each entry is either:
 
 
 (defun dkaman-org/post-init-org ()
-
   ;; Org locations
   (setq org-directory "~/org/")
 
-  (setq org-todo-keywords
-        '((sequence "TODO(t)" "SCHEDULED(s)" "WAITING(w@/!)" "|" "DONE(d)")))
+  ;; returns 'q' + the number of the current quarter
+  (defun djk/get-current-quarter ()
+    (let ((month-number (string-to-int (format-time-string "%m"))))
+      (cond ((and (>= month-number 1) (<= month-number 3))
+             (concat "q" (int-to-string 1)))
+            ((and (>= month-number 4) (<= month-number 6))
+             (concat "q" (int-to-string 2)))
+            ((and (>= month-number 7) (< month-number 9))
+             (concat "q" (int-to-string 3)))
+            ((and (>= month-number 10) (< month-number 12))
+             (concat "q" (int-to-string 4))))))
 
+  ;; function run by the state change hook to auto-schedule tasks
+  ;; based on the change from any state to SCHEDULED
+  (defun djk/schedule-task-on-state-change ()
+    (when (string= org-state "SCHEDULED")
+      (progn
+        (call-interactively 'org-schedule)
+        (call-interactively 'org-set-effort))))
+
+  ;; helper function to allow me to write out capture
+  ;; templates as a list of strings
+  (defun djk/newline-template (string-list)
+    (mapconcat 'identity string-list "\n"))
+
+  ;; helper function to prepend any file/directory
+  ;; name with my org directory
+  (defun djk/add-org-dir (file)
+    (concat org-directory file))
+
+  ;; construct the filename of my quarterly org files, named yyyy-q<quarter>.org
+  (defun djk/get-quarterly-filename ()
+    (djk/add-org-dir
+     (concat (format-time-string "%Y") "-" (djk/get-current-quarter) ".org")))
+
+  ;; open the quarterly file
+  (defun djk/find-quarterly-file ()
+    (interactive)
+    (find-file (djk/get-quarterly-filename)))
+
+  ;; ":PROPERTIES:"
+  ;; ":EFFORT: %^{effort|1:00|0:05|0:15|0:30|2:00|4:00|8:00}"
+  ;; ":END:"
+  ;; --- variables ---
+  ;; Default base task template
+  (defvar djk/org-basic-task-template
+    (djk/newline-template
+     '("* TODO %?")))
+
+  (defvar djk/org-basic-project-template
+    (djk/newline-template
+     '("* %? %^g"
+       "%(org-clock-report)")))
+
+  (setq org-agenda-files (list (djk/get-quarterly-filename)))
+
+  ;; --- setq ---
+  ;; todo states along with actions for each
+  ;; currently, saving notes after cancelling and blocking a task
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "SCHEDULED(s)" "WAITING(w@/!)" "|" "CANCELLED(c@)" "DONE(d)")))
+
+  ;; colors set up for todo states
   (setq org-todo-keyword-faces
         '(("TODO" . "red")
           ("SCHEDULED" . "cyan")
           ("WAITING" . "yellow")
+          ("CANCELLED" . "red")
           ("DONE" . "green")))
 
+  ;; if you use S-cursor, it will bypass logging for that state change
   (setq org-treat-S-cursor-todo-selection-as-state-change nil)
+  ;; org refile targets
+  (setq org-refile-targets
+        '((nil :maxlevel . 9)
+          (org-agenda-files :maxlevel . 9)))
 
-  (defun djk/newline-template (string-list)
-    (mapconcat 'identity string-list "\n"))
+  ;; archiving target
+  (setq org-archive-location "~/org/archive.org::datetree/")
 
-  (defun djk/add-org-dir (file)
-    (concat org-directory file))
-
-  (defun djk/find-organizer ()
-    (interactive)
-    (find-file (concat org-directory "organizer.org")))
-
-  (defun djk/schedule-task-on-state-change ()
-    (when (string= org-state "SCHEDULED")
-      (call-interactively 'org-schedule)))
-
-  (add-hook 'org-after-todo-state-change-hook 'djk/schedule-task-on-state-change)
-
-  ;; Default base task template
-  (defvar djk/org-basic-task-template
-    (djk/newline-template
-     '("* TODO %?"
-       ":PROPERTIES:"
-       ":EFFORT: %^{effort|1:00|0:05|0:15|0:30|2:00|4:00|8:00}"
-       ":END:"
-       "Captured %<%Y-%m-%d %H:%M>"
-       ""
-       "%i")))
-
-  (defvar djk/org-basic-project-template
-    (djk/newline-template
-     '("* %?"
-       ":PROPERTIES:"
-       ":END:"
-       "** inbox"
-       "** blocked"
-       "** recurring")))
-
-  ;; Capture templates
+  ;; capture templates
   (setq org-capture-templates
-        `(("t" "Task Entry" entry
-           (file+headline (djk/add-org-dir "organizer.org") "Inbox")
+        `(("t" "Task" entry
+           (file+headline (djk/get-quarterly-filename) "inbox")
            ,djk/org-basic-task-template
            :kill-buffer t)
-          ("j" "Journal Entry" entry
-           (file+datetree (djk/add-org-dir "journal.org"))
-           "* %<%H:%M> %?"
-           :kill-buffer t)
-          ("p" "Project Entry" entry
-           (file (djk/add-org-dir "projects.org"))
+          ("p" "Project" entry
+           (file+headline (djk/get-quarterly-filename) "projects")
            ,djk/org-basic-project-template
            :kill-buffer t)))
+
+  ;; --- hooks ---
+  (add-hook 'org-after-todo-state-change-hook 'djk/schedule-task-on-state-change)
 
   ;; Set up global capturing
   (evil-leader/set-key "oc" 'org-capture)
   ;; And global agenda-ing
   (evil-leader/set-key "oa" 'org-agenda)
-  ;; Quick, get my top level file
-  (evil-leader/set-key "oo" 'djk/find-organizer)
+  ;; globally open my todo file
+  (evil-leader/set-key "of" 'djk/find-quarterly-file)
+  ;; toggle columns with ,<TAB> or <SPC>m<TAB>
+  (spacemacs/set-leader-keys-for-major-mode 'org-mode "TAB" 'org-columns)
 
-  ;; Agenda files
-  (setq org-agenda-files
-        (mapcar 'djk/add-org-dir '("organizer.org"
-                                   "projects.org")))
-  ;; Org Refile targets
-  (setq org-refile-targets
-        '((nil :maxlevel . 9)
-          (org-agenda-files :maxlevel . 9))))
+  ;; some org mode specific bindings to make
+  (after 'org
+    (define-key org-mode-map (kbd "C-j") 'org-forward-heading-same-level)
+    (define-key org-mode-map (kbd "C-k") 'org-backward-heading-same-level)
+    (define-key org-mode-map (kbd "C-h") 'outline-up-heading)
+    (define-key org-mode-map (kbd "C-l") 'outline-next-visible-heading)))
 
 ;;; packages.el ends here

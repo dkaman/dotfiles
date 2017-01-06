@@ -1,0 +1,1 @@
+self.logger.debug("$0")

@@ -1,0 +1,8 @@
+% BeginTable(targets) %
+columns: $1
+hosts_with_header:
+ - header:
+   - name: $2
+   - hosts:
+     $3
+% EndTable(targets) %

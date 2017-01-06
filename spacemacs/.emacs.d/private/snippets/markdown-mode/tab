@@ -1,0 +1,5 @@
+% BeginTable(targets) %
+columns: $1
+generic_hosts:
+$2
+% EndTable(targets) %

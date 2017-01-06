@@ -1,0 +1,31 @@
+# Terminal colors
+colors = {
+    'normal' : "\x1b[0m",
+    'black'  : "\x1b[30m",
+    'red'    : "\x1b[31m",
+    'green'  : "\x1b[32m",
+    'yellow' : "\x1b[33m",
+    'blue'   : "\x1b[34m",
+    'purple' : "\x1b[35m",
+    'cyan'   : "\x1b[36m",
+    'grey'   : "\x1b[90m",
+    'gray'   : "\x1b[90m",
+    'bold'   : "\x1b[1m"
+}
+
+def color(string, color='normal'):
+    return colors[color] + string + colors['normal']
+
+def info(string, indent=0):
+    return '[' + color('.', color='blue') + '] ' + '\t' * indent + string
+
+def success(string, indent=0):
+    return '[' + color('+', color='green') + '] ' + '\t' * indent + string
+
+def error(string, indent=0):
+    return '[' + color('!', color='red') + '] ' + '\t' * indent + string
+
+def warn(string, indent=0):
+    return '[' + color('*', color='yellow') + '] ' + '\t' * indent + string
+
+$1

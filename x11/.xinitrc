@@ -11,14 +11,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-#start awesome WM with dual monitor setup in normal mode
-#xrandr --output HDMI3 --auto
-#xrandr --output HDMI1 --auto --right-of HDMI3
-xmodmap ~/.xmodmap
+[[ -f ~/.xmodmap ]] && xmodmap ~/.xmodmap
+
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-
-# exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
+exec startxfce4

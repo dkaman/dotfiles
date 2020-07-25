@@ -63,49 +63,25 @@ Each entry is either:
   ;; Org locations
   (setq org-directory "~/org/")
 
-  ;; returns 'q' + the number of the current quarter
-  (defun djk/get-current-quarter ()
-    (let ((month-number (string-to-int (format-time-string "%m"))))
-      (cond ((and (>= month-number 1) (<= month-number 3))
-             (concat "q" (int-to-string 1)))
-            ((and (>= month-number 4) (<= month-number 6))
-             (concat "q" (int-to-string 2)))
-            ((and (>= month-number 7) (< month-number 9))
-             (concat "q" (int-to-string 3)))
-            ((and (>= month-number 10) (< month-number 12))
-             (concat "q" (int-to-string 4))))))
+  (setq djk/manna-file "~/org/manna.org")
 
   ;; function run by the state change hook to auto-schedule tasks
   ;; based on the change from any state to SCHEDULED
   (defun djk/schedule-task-on-state-change ()
     (when (string= org-state "SCHEDULED")
       (progn
-        (call-interactively 'org-schedule)
-        (call-interactively 'org-set-effort))))
+        (call-interactively 'org-schedule))))
 
   ;; helper function to allow me to write out capture
   ;; templates as a list of strings
   (defun djk/newline-template (string-list)
     (mapconcat 'identity string-list "\n"))
 
-  ;; helper function to prepend any file/directory
-  ;; name with my org directory
-  (defun djk/add-org-dir (file)
-    (concat org-directory file))
-
-  ;; construct the filename of my quarterly org files, named yyyy-q<quarter>.org
-  (defun djk/get-quarterly-filename ()
-    (djk/add-org-dir
-     (concat (format-time-string "%Y") "-" (djk/get-current-quarter) ".org")))
-
   ;; open the quarterly file
-  (defun djk/find-quarterly-file ()
+  (defun djk/find-manna-file ()
     (interactive)
-    (find-file (djk/get-quarterly-filename)))
+    (find-file djk/manna-file))
 
-  ;; ":PROPERTIES:"
-  ;; ":EFFORT: %^{effort|1:00|0:05|0:15|0:30|2:00|4:00|8:00}"
-  ;; ":END:"
   ;; --- variables ---
   ;; Default base task template
   (defvar djk/org-basic-task-template
@@ -117,7 +93,7 @@ Each entry is either:
      '("* %? %^g"
        "%(org-clock-report)")))
 
-  (setq org-agenda-files (list (djk/get-quarterly-filename)))
+  (setq org-agenda-files '("~/org"))
 
   ;; --- setq ---
   ;; todo states along with actions for each
@@ -135,6 +111,7 @@ Each entry is either:
 
   ;; if you use S-cursor, it will bypass logging for that state change
   (setq org-treat-S-cursor-todo-selection-as-state-change nil)
+
   ;; org refile targets
   (setq org-refile-targets
         '((nil :maxlevel . 9)
@@ -145,12 +122,10 @@ Each entry is either:
 
   ;; capture templates
   (setq org-capture-templates
-        `(("t" "Task" entry
-           (file+headline (djk/get-quarterly-filename) "inbox")
+        `(("t" "task" entry (file+headline djk/manna-file "inbox")
            ,djk/org-basic-task-template
            :kill-buffer t)
-          ("p" "Project" entry
-           (file+headline (djk/get-quarterly-filename) "projects")
+          ("p" "project" entry (file+headline djk/manna-file "projects")
            ,djk/org-basic-project-template
            :kill-buffer t)))
 
@@ -159,10 +134,13 @@ Each entry is either:
 
   ;; Set up global capturing
   (evil-leader/set-key "oc" 'org-capture)
+
   ;; And global agenda-ing
   (evil-leader/set-key "oa" 'org-agenda)
+
   ;; globally open my todo file
-  (evil-leader/set-key "of" 'djk/find-quarterly-file)
+  (evil-leader/set-key "of" 'djk/find-manna-file)
+
   ;; toggle columns with ,<TAB> or <SPC>m<TAB>
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "TAB" 'org-columns)
 

@@ -61,16 +61,11 @@ Each entry is either:
 
 (defun dkaman-org/post-init-org ()
   ;; Org locations
-  (setq org-directory "~/org/")
+  (setq org-directory "~/org")
 
-  (setq djk/manna-file "~/org/manna.org")
+  (setq djk/manna-file (concat org-directory "/dallas.org"))
 
-  ;; function run by the state change hook to auto-schedule tasks
-  ;; based on the change from any state to SCHEDULED
-  (defun djk/schedule-task-on-state-change ()
-    (when (string= org-state "SCHEDULED")
-      (progn
-        (call-interactively 'org-schedule))))
+  (setq djk/manna-categories-directory (concat org-directory "/categories"))
 
   ;; helper function to allow me to write out capture
   ;; templates as a list of strings
@@ -82,16 +77,43 @@ Each entry is either:
     (interactive)
     (find-file djk/manna-file))
 
+  (defun djk/get-category-file ()
+    (read-file-name "category-file: " djk/manna-categories-directory))
+
+  (defun djk/build-index-list ()
+    (mapcar
+     (lambda (x) (format "[[%s][%s]]\n" x (file-relative-name x ".")))
+     (directory-files-recursively org-directory "^[^.].*\.org$")))
+
   ;; --- variables ---
   ;; Default base task template
-  (defvar djk/org-basic-task-template
+  (defvar djk/org-task-template
     (djk/newline-template
      '("* TODO %?")))
 
-  (defvar djk/org-basic-project-template
+  (defvar djk/org-project-template
     (djk/newline-template
      '("* %? %^g"
        "%(org-clock-report)")))
+
+  (defvar djk/org-category-gtd-template
+    (djk/newline-template
+     '("* inbox"
+       "* projects"
+       "* references")))
+
+  (defvar djk/org-category-kb-template
+    (djk/newline-template
+     '("* notes"
+       "* links")))
+
+  (defvar djk/org-category-journal-template
+    (djk/newline-template
+     '("* %T %?")))
+
+  (defvar djk/org-category-soc-template
+    (djk/newline-template
+     '("")))
 
   (setq org-agenda-files '("~/org"))
 
@@ -99,12 +121,12 @@ Each entry is either:
   ;; todo states along with actions for each
   ;; currently, saving notes after cancelling and blocking a task
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "SCHEDULED(s)" "WAITING(w@/!)" "|" "CANCELLED(c@)" "DONE(d)")))
+        '((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "|" "CANCELLED(c@)" "DONE(d)")))
 
   ;; colors set up for todo states
   (setq org-todo-keyword-faces
         '(("TODO" . "red")
-          ("SCHEDULED" . "cyan")
+          ("NEXT" . "cyan")
           ("WAITING" . "yellow")
           ("CANCELLED" . "red")
           ("DONE" . "green")))
@@ -123,14 +145,26 @@ Each entry is either:
   ;; capture templates
   (setq org-capture-templates
         `(("t" "task" entry (file+headline djk/manna-file "inbox")
-           ,djk/org-basic-task-template
+           ,djk/org-task-template
            :kill-buffer t)
           ("p" "project" entry (file+headline djk/manna-file "projects")
-           ,djk/org-basic-project-template
+           ,djk/org-project-template
+           :kill-buffer t)
+          ("c" "category files")
+          ("cg" "gtd file" plain (file djk/find-category-file)
+           ,djk/org-category-gtd-template
+           :kill-buffer t)
+          ("ck" "knowledge base" plain (file djk/find-category-file)
+           ,djk/org-category-kb-template
+           :kill-buffer t)
+          ("cj" "journal" plain (file+olp+datetree djk/find-category-file)
+           ,djk/org-category-journal-template
+           :kill-buffer t)
+          ("cs" "stream of consciousness" plain (file djk/find-category-file)
+           ,djk/org-category-soc-template
            :kill-buffer t)))
 
   ;; --- hooks ---
-  (add-hook 'org-after-todo-state-change-hook 'djk/schedule-task-on-state-change)
 
   ;; Set up global capturing
   (evil-leader/set-key "oc" 'org-capture)

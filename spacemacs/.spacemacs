@@ -56,11 +56,11 @@ values."
      html
      gtags
      dired
+     manna
      csharp
      python
      markdown
      javascript
-     dkaman-org
      emacs-lisp
      themes-megapack
      )

@@ -1,4 +1,4 @@
-;;; packages.el --- dkaman-org layer packages file for Spacemacs.
+;;; packages.el --- manna layer packages file for Spacemacs.
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
@@ -18,20 +18,20 @@
 ;;
 ;;
 ;; Briefly, each package to be installed or configured by this layer should be
-;; added to `dkaman-org-packages'. Then, for each package PACKAGE:
+;; added to `manna-packages'. Then, for each package PACKAGE:
 ;;
 ;; - If PACKAGE is not referenced by any other Spacemacs layer, define a
-;;   function `dkaman-org/init-PACKAGE' to load and initialize the package.
+;;   function `manna/init-PACKAGE' to load and initialize the package.
 
 ;; - Otherwise, PACKAGE is already referenced by another Spacemacs layer, so
-;;   define the functions `dkaman-org/pre-init-PACKAGE' and/or
-;;   `dkaman-org/post-init-PACKAGE' to customize the package as it is loaded.
+;;   define the functions `manna/pre-init-PACKAGE' and/or
+;;   `manna/post-init-PACKAGE' to customize the package as it is loaded.
 
 ;;; Code:
 
-(defconst dkaman-org-packages
+(defconst manna-packages
   '(org)
-  "The list of Lisp packages required by the dkaman-org layer.
+  "The list of Lisp packages required by the manna layer.
 
 Each entry is either:
 
@@ -59,65 +59,17 @@ Each entry is either:
         recipe.  See: https://github.com/milkypostman/melpa#recipe-format")
 
 
-(defun dkaman-org/post-init-org ()
-  ;; Org locations
-  (setq org-directory "~/org")
+(defun manna/post-init-org ()
 
-  (setq djk/manna-file (concat org-directory "/dallas.org"))
+  ;; locations
+  (setq org-directory (file-name-as-directory manna/directory))
+  (setq manna/top-level-file (f-expand manna/top-level-file-name org-directory))
+  (setq manna/categories-directory (file-name-as-directory (f-expand "categories" org-directory)))
+  (setq manna/templates-directory (file-name-as-directory (f-expand "templates" org-directory)))
 
-  (setq djk/manna-categories-directory (concat org-directory "/categories"))
+  (setq org-agenda-files `(,org-directory
+                           ,manna/categories-directory))
 
-  ;; helper function to allow me to write out capture
-  ;; templates as a list of strings
-  (defun djk/newline-template (string-list)
-    (mapconcat 'identity string-list "\n"))
-
-  ;; open the quarterly file
-  (defun djk/find-manna-file ()
-    (interactive)
-    (find-file djk/manna-file))
-
-  (defun djk/get-category-file ()
-    (read-file-name "category-file: " djk/manna-categories-directory))
-
-  (defun djk/build-index-list ()
-    (mapcar
-     (lambda (x) (format "[[%s][%s]]\n" x (file-relative-name x ".")))
-     (directory-files-recursively org-directory "^[^.].*\.org$")))
-
-  ;; --- variables ---
-  ;; Default base task template
-  (defvar djk/org-task-template
-    (djk/newline-template
-     '("* TODO %?")))
-
-  (defvar djk/org-project-template
-    (djk/newline-template
-     '("* %? %^g"
-       "%(org-clock-report)")))
-
-  (defvar djk/org-category-gtd-template
-    (djk/newline-template
-     '("* inbox"
-       "* projects"
-       "* references")))
-
-  (defvar djk/org-category-kb-template
-    (djk/newline-template
-     '("* notes"
-       "* links")))
-
-  (defvar djk/org-category-journal-template
-    (djk/newline-template
-     '("* %T %?")))
-
-  (defvar djk/org-category-soc-template
-    (djk/newline-template
-     '("")))
-
-  (setq org-agenda-files '("~/org"))
-
-  ;; --- setq ---
   ;; todo states along with actions for each
   ;; currently, saving notes after cancelling and blocking a task
   (setq org-todo-keywords
@@ -144,24 +96,24 @@ Each entry is either:
 
   ;; capture templates
   (setq org-capture-templates
-        `(("t" "task" entry (file+headline djk/manna-file "inbox")
-           ,djk/org-task-template
+        `(("t" "task" entry (file+headline manna/top-level-file "inbox")
+           "* TODO %?"
            :kill-buffer t)
-          ("p" "project" entry (file+headline djk/manna-file "projects")
-           ,djk/org-project-template
+          ("p" "project" entry (file+headline manna/top-level-file "projects")
+           "* %? %^g\n%(org-clock-report)"
            :kill-buffer t)
           ("c" "category files")
-          ("cg" "gtd file" plain (file djk/find-category-file)
-           ,djk/org-category-gtd-template
+          ("cg" "gtd file" plain (file manna/get-category-file)
+           ,(manna/get-capture-template "gtd")
            :kill-buffer t)
-          ("ck" "knowledge base" plain (file djk/find-category-file)
-           ,djk/org-category-kb-template
+          ("ck" "knowledge base" plain (file manna/get-category-file)
+           ,(manna/get-capture-template "kb")
            :kill-buffer t)
-          ("cj" "journal" plain (file+olp+datetree djk/find-category-file)
-           ,djk/org-category-journal-template
+          ("cj" "journal" entry (file+olp+datetree manna/get-category-file)
+           ,(manna/get-capture-template "journal")
            :kill-buffer t)
-          ("cs" "stream of consciousness" plain (file djk/find-category-file)
-           ,djk/org-category-soc-template
+          ("cs" "stream of consciousness" plain (file manna/get-category-file)
+           ,(manna/get-capture-template "soc")
            :kill-buffer t)))
 
   ;; --- hooks ---
@@ -173,7 +125,7 @@ Each entry is either:
   (evil-leader/set-key "oa" 'org-agenda)
 
   ;; globally open my todo file
-  (evil-leader/set-key "of" 'djk/find-manna-file)
+  (evil-leader/set-key "of" 'manna/find-top-level-file)
 
   ;; toggle columns with ,<TAB> or <SPC>m<TAB>
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "TAB" 'org-columns)

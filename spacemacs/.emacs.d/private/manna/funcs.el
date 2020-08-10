@@ -41,3 +41,18 @@ to be used in the construction of the index heading of the top-level file."
     (with-temp-buffer
       (insert-file-contents (f-join manna/templates-directory template-file-name))
       (buffer-string))))
+
+
+(defun manna/insert-clock-table (heading)
+  (org-element-adopt-elements heading '(paragraph (:raw-value "lol")))
+  )
+
+(defun manna/convert-todo-to-project ()
+  (interactive)
+  (let* ((heading (org-element-at-point))
+         (end-of-heading (org-element-property :contents-end heading)))
+    (princ end-of-heading)
+    (org-todo "")
+    (goto-char end-of-heading)
+    (insert "\n")
+    (manna/insert-clock-table heading)))

@@ -73,15 +73,15 @@ Each entry is either:
   ;; todo states along with actions for each
   ;; currently, saving notes after cancelling and blocking a task
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "|" "CANCELLED(c@)" "DONE(d)")))
+        '((sequence "TODO(t)" "NEXT(n)" "WAIT(w@/!)" "|" "NOPE(x@)" "DONE(d)")))
 
   ;; colors set up for todo states
   (setq org-todo-keyword-faces
-        '(("TODO" . "red")
-          ("NEXT" . "cyan")
-          ("WAITING" . "yellow")
-          ("CANCELLED" . "red")
-          ("DONE" . "green")))
+        '(("TODO" . "#5DA9F6")
+          ("NEXT" . "#E86AFF")
+          ("WAIT" . "#DDF88F")
+          ("NOPE" . "#F58C80")
+          ("DONE" . "#B1E969")))
 
   ;; if you use S-cursor, it will bypass logging for that state change
   (setq org-treat-S-cursor-todo-selection-as-state-change nil)
@@ -109,7 +109,7 @@ Each entry is either:
           ("ck" "knowledge base" plain (file manna/get-category-file)
            ,(manna/get-capture-template "kb")
            :kill-buffer t)
-          ("cj" "journal" entry (file+olp+datetree manna/get-category-file)
+          ("cj" "journal" plain (file manna/get-category-file)
            ,(manna/get-capture-template "journal")
            :kill-buffer t)
           ("cs" "stream of consciousness" plain (file manna/get-category-file)
@@ -117,6 +117,7 @@ Each entry is either:
            :kill-buffer t)))
 
   ;; --- hooks ---
+  (add-hook 'org-mode-hook (lambda () (hl-todo-mode -1) nil))
 
   ;; Set up global capturing
   (evil-leader/set-key "oc" 'org-capture)

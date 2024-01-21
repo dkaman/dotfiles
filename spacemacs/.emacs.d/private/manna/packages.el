@@ -60,15 +60,15 @@ Each entry is either:
 
 
 (defun manna/post-init-org ()
-
   ;; locations
   (setq org-directory (file-name-as-directory manna/directory))
   (setq manna/top-level-file (f-expand manna/top-level-file-name org-directory))
   (setq manna/categories-directory (file-name-as-directory (f-expand "categories" org-directory)))
   (setq manna/templates-directory (file-name-as-directory (f-expand "templates" org-directory)))
-
   (setq org-agenda-files `(,org-directory
                            ,manna/categories-directory))
+  (setq org-agenda-skip-scheduled-if-done t)
+  (setq org-agenda-skip-deadline-if-done t)
 
   ;; todo states along with actions for each
   ;; currently, saving notes after cancelling and blocking a task
@@ -115,6 +115,9 @@ Each entry is either:
           ("cs" "stream of consciousness" plain (file manna/get-category-file)
            ,(manna/get-capture-template "soc")
            :kill-buffer t)))
+
+  (org-babel-do-load-languages 'org-babel-load-languages
+                               '((ledger . t)))
 
   ;; --- hooks ---
   (add-hook 'org-mode-hook (lambda () (hl-todo-mode -1) nil))

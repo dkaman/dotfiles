@@ -44,8 +44,7 @@ to be used in the construction of the index heading of the top-level file."
 
 
 (defun manna/insert-clock-table (heading)
-  (org-element-adopt-elements heading '(paragraph (:raw-value "lol")))
-  )
+  (org-element-adopt-elements heading '(paragraph (:raw-value "lol"))))
 
 (defun manna/convert-todo-to-project ()
   (interactive)
@@ -56,3 +55,12 @@ to be used in the construction of the index heading of the top-level file."
     (goto-char end-of-heading)
     (insert "\n")
     (manna/insert-clock-table heading)))
+
+(defun manna/last-day-of-month (date)
+  "Return `t` if DATE is the last day of the month."
+  (let* ((day (calendar-extract-day date))
+         (month (calendar-extract-month date))
+         (year (calendar-extract-year date))
+         (last-day-of-month
+          (calendar-last-day-of-month month year)))
+    (= day last-day-of-month)))

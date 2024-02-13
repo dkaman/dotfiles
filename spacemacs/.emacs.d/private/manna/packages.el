@@ -67,8 +67,6 @@ Each entry is either:
   (setq manna/templates-directory (file-name-as-directory (f-expand "templates" org-directory)))
   (setq org-agenda-files `(,org-directory
                            ,manna/categories-directory))
-  (setq org-agenda-skip-scheduled-if-done t)
-  (setq org-agenda-skip-deadline-if-done t)
 
   ;; todo states along with actions for each
   ;; currently, saving notes after cancelling and blocking a task
@@ -92,7 +90,9 @@ Each entry is either:
           (org-agenda-files :maxlevel . 9)))
 
   ;; archiving target
-  (setq org-archive-location "~/org/archive.org::datetree/")
+  (setq org-archive-location
+        (format "%s::datetree/"
+                (f-join manna/archive-directory (format "%s.org" (manna/current-date-to-quarter)))))
 
   ;; capture templates
   (setq org-capture-templates
@@ -116,11 +116,33 @@ Each entry is either:
            ,(manna/get-capture-template "soc")
            :kill-buffer t)))
 
+  ;; org-agenda customization (thanks prot)
+  (after 'org-agenda
+    (setq org-agenda-skip-scheduled-if-done t)
+    (setq org-agenda-skip-deadline-if-done t)
+    (setq org-agenda-custom-commands
+          `(("d" "dallas agenda mode"
+             ,manna/org-custom-daily-agenda)
+            ("p" "dallas agenda mode (plaintext)"
+             ,manna/org-custom-daily-agenda
+             ((org-agenda-with-colors nil)
+              (org-agenda-prefix-format "%t %s")
+              (org-agenda-current-time-string ,(car (last org-agenda-time-grid)))
+              (org-agenda-fontify-priorities nil)
+              (org-agenda-remove-tags t))
+             ("agenda.txt"))))
+    )
+
   (org-babel-do-load-languages 'org-babel-load-languages
                                '((ledger . t)))
 
   ;; --- hooks ---
+
+  ;; prevent the default face colors from hl-todo-mode from shadowing the ones
+  ;; we've chosen
   (add-hook 'org-mode-hook (lambda () (hl-todo-mode -1) nil))
+
+  ;; --- keys ---
 
   ;; Set up global capturing
   (evil-leader/set-key "oc" 'org-capture)
@@ -139,6 +161,7 @@ Each entry is either:
     (define-key org-mode-map (kbd "C-j") 'org-forward-heading-same-level)
     (define-key org-mode-map (kbd "C-k") 'org-backward-heading-same-level)
     (define-key org-mode-map (kbd "C-h") 'outline-up-heading)
-    (define-key org-mode-map (kbd "C-l") 'outline-next-visible-heading)))
+    (define-key org-mode-map (kbd "C-l") 'outline-next-visible-heading)
+    ))
 
 ;;; packages.el ends here

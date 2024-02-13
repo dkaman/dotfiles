@@ -64,3 +64,8 @@ to be used in the construction of the index heading of the top-level file."
          (last-day-of-month
           (calendar-last-day-of-month month year)))
     (= day last-day-of-month)))
+
+(defun  manna/current-date-to-quarter ()
+  "for use in archive file naming, this function returns a date in the form
+'YYYY-q#' corresponding to the current year and quarter."
+  (format-time-string "%Y-q%q" (current-time)))

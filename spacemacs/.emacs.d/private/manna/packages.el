@@ -60,6 +60,9 @@ Each entry is either:
 
 
 (defun manna/post-init-org ()
+  ;; startup
+  (setq org-startup-indented t)
+
   ;; locations
   (setq org-directory (file-name-as-directory manna/directory))
   (setq manna/top-level-file (f-expand manna/top-level-file-name org-directory))

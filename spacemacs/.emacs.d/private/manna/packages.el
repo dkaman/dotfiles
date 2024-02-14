@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (c) 2012-2016 Sylvain Benner & Contributors
 ;;
-;; Author: Dallas Kaman <dkaman@dkaman-box.local>
+;; Author: Dallas Kaman
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
@@ -67,6 +67,7 @@ Each entry is either:
   (setq manna/templates-directory (file-name-as-directory (f-expand "templates" org-directory)))
   (setq org-agenda-files `(,org-directory
                            ,manna/categories-directory))
+  (setq manna/archive-directory (f-expand ".archive" org-directory))
 
   ;; todo states along with actions for each
   ;; currently, saving notes after cancelling and blocking a task
@@ -130,8 +131,7 @@ Each entry is either:
               (org-agenda-current-time-string ,(car (last org-agenda-time-grid)))
               (org-agenda-fontify-priorities nil)
               (org-agenda-remove-tags t))
-             ("agenda.txt"))))
-    )
+             ("agenda.txt")))))
 
   (org-babel-do-load-languages 'org-babel-load-languages
                                '((ledger . t)))

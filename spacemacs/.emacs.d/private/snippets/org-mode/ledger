@@ -1,0 +1,2 @@
+$0#+begin_src ledger :cmdline ${1:<command>}
+#+end_src

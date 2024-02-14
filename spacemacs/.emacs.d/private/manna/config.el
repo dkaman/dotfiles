@@ -12,8 +12,6 @@
   "this directory will be used to store everything related to the system.
 org-directory will be set to this value after being normalized")
 
-(defvar manna/archive-directory (f-expand ".archive" org-directory))
-
 (defvar manna/top-level-file-name "dallas.org"
   "this is the base name of the top-level manna file. this is where the
 index and global inbox will be created.")
@@ -45,7 +43,7 @@ index and global inbox will be created.")
                 (org-deadline-warning-days 0)
                 (org-agenda-block-separator nil)
                 (org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
-                (org-agenda-overriding-header "\nNext three days\n")))
+                (org-agenda-overriding-header "\nnext three days\n")))
     (agenda "" ((org-agenda-start-on-weekday nil)
                 ;; We don't want to replicate the previous section's
                 ;; three days, so we start counting from the day after.

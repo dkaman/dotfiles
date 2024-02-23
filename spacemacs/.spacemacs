@@ -62,7 +62,9 @@ values."
      (go
       :variables
       go-backend 'lsp
-      gofmt-before-save t)
+      gofmt-before-save t
+      godoc-at-point-function 'godoc-gogetdoc
+      )
 
      php
      sql
@@ -79,6 +81,7 @@ values."
      markdown
      javascript
      emacs-lisp
+     syntax-checking
      themes-megapack
      )
    ;; List of additional packages that will be installed without being
@@ -134,7 +137,6 @@ values."
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
    dotspacemacs-startup-lists '((recents . 10) (projects . 10))
-
    ;; Number of recent files to show in the startup buffer. Ignored if
    ;; `dotspacemacs-startup-lists' doesn't include `recents'. (default 5)
    dotspacemacs-startup-recent-list-size 5
@@ -187,7 +189,7 @@ values."
    ;; If non nil `Y' is remapped to `y$'. (default t)
    dotspacemacs-remap-Y-to-y$ t
    ;; Name of the default layout (default "Default")
-   dotspacemacs-default-layout-name "Default"
+   dotspacemacs-default-layout-name "home"
    ;; If non nil the default layout name is displayed in the mode-line.
    ;; (default nil)
    dotspacemacs-display-default-layout nil
@@ -305,6 +307,7 @@ you should place your code here."
   (add-hook 'markdown-mode-hook 'turn-on-auto-fill)
   (key-chord-mode 1)
   (key-chord-define evil-insert-state-map "fd" 'evil-normal-state)
+  (setq projectile-project-search-path `(("~/git" . 1)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

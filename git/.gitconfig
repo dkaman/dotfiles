@@ -5,3 +5,9 @@
 	editor = emacs
 [merge]
 	tool = ediff
+
+[alias]
+	update-from = "!f() { git fetch $1 --prune; git merge --ff-only $1/$2 || git rebase --preserve-merges $1/$2; }; f"
+
+[init]
+	defaultBranch = main

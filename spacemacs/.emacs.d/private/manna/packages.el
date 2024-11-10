@@ -104,7 +104,7 @@ Each entry is either:
            "* TODO %?"
            :kill-buffer t)
           ("p" "project" entry (file+headline manna/top-level-file "projects")
-           "* %? %^g\n%(org-clock-report)"
+           "* %? %^g\n\n%(org-clock-report)"
            :kill-buffer t)
           ("c" "category files")
           ("cg" "gtd file" plain (file manna/get-category-file)

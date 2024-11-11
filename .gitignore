@@ -2,3 +2,10 @@ vim/.vim/views/*
 emacs/.emacs.d/.emacs-backups/*
 emacs/.emacs.d/auto-save-list/*
 xmonad/.xmonad/history
+
+# xmonad bins and random files
+xmonad-x86_64-linux
+xmonad-i386-linux
+xmonad.o
+xmonad.hi
+xmonad.errors

@@ -1,41 +1,81 @@
-Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
-       , bgColor = "#000000"
-       , fgColor = "#FFFFFF"
-       , position = TopW L 100
-       , commands = [ Run Weather "KAUS" ["-t"," <tempF>F"
-       	 	      	  	  	 ,"-L","64"
-					 ,"-H","77"
-					 ,"--normal","green"
-					 ,"--high","red"
-					 ,"--low","lightblue"
-					 ] 36000
-                    , Run Cpu ["-L","3"
-		      	      ,"-H","50"
-			      ,"--normal","green"
-			      ,"--high","red"
-			      ] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    , Run Date "%a %b %_d %l:%M" "date" 10
-                    , Run BatteryP ["BAT0"]
-		      	  	   [ "--template" , "Battery: <left>% <timeleft>"
-				   , "--Low"      , "10"        -- units: %
-				   , "--High"     , "80"        -- units: %
-				   , "--low"      , "darkred"
-				   , "--normal"   , "darkorange"
-				   , "--high"     , "darkgreen"
-				   , "--" -- battery specific options
-				   , "-f"	, "APD1/online"
-                                   -- discharging status
-                                   , "-o"	, "<left>% (<timeleft>)"
-                                   -- AC "on" status
-                                   , "-O"	, "<fc=#dAA520>Charging</fc>"
-				   ] 50
-		    , Run StdinReader
-		    ]
-       , sepChar = "%"
-       , alignSep = "}{"
-       , lowerOnStart = True
-       , border = BottomB 
-       , borderColor = "#85E0FF"
-       , template = "%StdinReader% }{ %cpu% <fc=#00008A>|</fc> %memory% <fc=#00008A>|</fc> %battery% <fc=#00008A>|</fc> %date% <fc=#00008A>|</fc> %KAUS%"
+-- colors (stolen from wombat)
+-- #242424 (background grey)
+-- #f6f3e8 (light fg color)
+-- #8ac6f2 (keyword blue)
+-- #95e454 (string green)
+-- #e5786d (constant red)
+
+Config {
+       -- appearance
+         font        = "xft:Source Code Pro:size=12"
+       , bgColor     = "#242424"
+       , fgColor     = "#f6f3e8"
+       , position    = BottomW L 100
+       , border      = TopB
+       , borderColor = "#8ac6f2"
+
+       -- layout
+       , sepChar  = "%"  -- delimeter between plugin names and text
+       , alignSep = "}{" -- separator between left-right alignment
+       , template = "%StdinReader% }{ <fc=#8ac6f2>|</fc> %multicpu% %coretemp% <fc=#8ac6f2>|</fc> %memory% <fc=#8ac6f2>|</fc> %date% <fc=#8ac6f2>|</fc> aus: %KAUS% <fc=#8ac6f2>|</fc> %battery%"
+
+       -- general behavior
+       , lowerOnStart = True -- send to the bottom of window stack on start
+       , allDesktops  = True -- show on all desktops
+
+       -- plugins
+       , commands =
+         -- weather monitor for austin airport
+         [ Run Weather "KAUS" [ "-t"       , "<tempF>°F/<tempC>°C"
+                              , "-L"       , "64"
+                              , "-H"       , "77"
+                              , "--normal" , "#95e454"
+                              , "--high"   , "#e5786d"
+                              , "--low"    , "#8ac6f2"
+                              ] 36000
+
+         -- cpu load monitor
+         , Run MultiCpu       [ "-t"       , "cpu: <total0>%|<total1>%|<total2>%|<total3>%"
+                              , "-L"       , "3"
+                              , "-H"       , "50"
+                              , "--normal" , "#95e454"
+                              , "--high"   , "#e5786d"
+                              ] 10
+
+         -- cpu core temperature monitor
+         , Run CoreTemp       [ "-t"       , "<core0>|<core1>°C"
+                              , "-L"       , "40"
+                              , "-H"       , "70"
+                              , "--normal" , "#95e454"
+                              , "--high"   , "#e5786d"
+                              , "--low"    , "#8ac6f2"
+                              ] 50
+
+         -- memory utilization monitor
+         , Run Memory         [ "-t","mem: <usedratio>%"
+                              ] 10
+
+         -- battery monitor
+         , Run BatteryP       ["AC", "BAT0", "BAT1"]
+                              [ "-t"       , "<acstatus>"
+                              , "--L"      , "10"        -- units: %
+                              , "--H"      , "80"        -- units: %
+                              , "--low"    , "#e5786d"
+                              , "--normal" , "darkorange"
+                              , "--high"   , "#95e454"
+                              , "--" -- battery specific options
+                              -- AC "on" status
+                              , "-O"       , "<fc=#95e454>charging</fc>"
+                              -- AC "idle" status
+                              , "-i"       , "<fc=#8ac6f2>idle</fc>"
+                              -- AC "off" status
+                              , "-o"       , "<left>% (<timeleft>)"
+                              ] 50
+
+         -- date display
+         , Run Date "%F (%a) %T" "date" 10
+
+         -- xmonad window display
+         , Run StdinReader
+         ]
        }

@@ -4,77 +4,163 @@
   <property name="configver" type="int" value="2"/>
   <property name="panels" type="array">
     <value type="int" value="1"/>
-    <value type="int" value="2"/>
     <property name="panel-1" type="empty">
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="30"/>
       <property name="plugin-ids" type="array">
-        <value type="int" value="1"/>
+        <value type="int" value="16"/>
+        <value type="int" value="2"/>
         <value type="int" value="3"/>
         <value type="int" value="15"/>
         <value type="int" value="4"/>
-        <value type="int" value="5"/>
         <value type="int" value="6"/>
-        <value type="int" value="2"/>
+        <value type="int" value="1"/>
       </property>
-    </property>
-    <property name="panel-2" type="empty">
-      <property name="position" type="string" value="p=10;x=0;y=0"/>
-      <property name="position-locked" type="bool" value="true"/>
-      <property name="plugin-ids" type="array">
-        <value type="int" value="7"/>
-        <value type="int" value="8"/>
-        <value type="int" value="9"/>
-        <value type="int" value="10"/>
-        <value type="int" value="11"/>
-        <value type="int" value="12"/>
-        <value type="int" value="13"/>
-        <value type="int" value="14"/>
+      <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="background-color" type="array">
+        <value type="uint" value="0"/>
+        <value type="uint" value="0"/>
+        <value type="uint" value="0"/>
+        <value type="uint" value="65535"/>
       </property>
+      <property name="span-monitors" type="bool" value="false"/>
+      <property name="mode" type="uint" value="0"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="background-alpha" type="uint" value="100"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.26333299999999998"/>
+        <value type="double" value="0.245778"/>
+        <value type="double" value="0.245778"/>
+        <value type="double" value="1"/>
+      </property>
+      <property name="icon-size" type="uint" value="0"/>
+      <property name="enable-struts" type="bool" value="true"/>
     </property>
   </property>
   <property name="plugins" type="empty">
-    <property name="plugin-1" type="string" value="applicationsmenu"/>
-    <property name="plugin-2" type="string" value="actions"/>
-    <property name="plugin-3" type="string" value="tasklist"/>
     <property name="plugin-15" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-4" type="string" value="pager"/>
-    <property name="plugin-5" type="string" value="clock"/>
-    <property name="plugin-6" type="string" value="systray"/>
-    <property name="plugin-7" type="string" value="showdesktop"/>
-    <property name="plugin-8" type="string" value="separator">
-      <property name="style" type="uint" value="1"/>
-    </property>
-    <property name="plugin-9" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="14847111881.desktop"/>
+    <property name="plugin-6" type="string" value="systray">
+      <property name="names-visible" type="array">
+        <value type="string" value="vlc"/>
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="slack"/>
+        <value type="string" value="redshift-gtk"/>
+      </property>
+      <property name="names-ordered" type="array">
+        <value type="string" value="vlc"/>
+        <value type="string" value="dropbox"/>
+        <value type="string" value="obs"/>
+        <value type="string" value="zoom"/>
+        <value type="string" value="networkmanager applet"/>
+      </property>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “studio metric” active: studio metric (60%)"/>
+        <value type="string" value="wi-fi network connection “studio metric” active: studio metric (58%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (69%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (82%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (78%)"/>
+        <value type="string" value="requesting an ethernet network address for “wired connection 1”…"/>
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
+        <value type="string" value="networkmanager applet"/>
+      </property>
+      <property name="known-items" type="array">
+        <value type="string" value="electrum"/>
+        <value type="string" value="chrome_status_icon_1"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="dropbox-client-2024242"/>
+        <value type="string" value="dropbox-client-1572430"/>
+        <value type="string" value="dropbox-client-1564670"/>
+        <value type="string" value="dropbox-client-1269963"/>
+        <value type="string" value="dropbox-client-487827"/>
+        <value type="string" value="dropbox-client-108736"/>
+        <value type="string" value="dropbox-client-1864"/>
+        <value type="string" value="dropbox-client-1158"/>
+        <value type="string" value="dropbox-client-27636"/>
+        <value type="string" value="dropbox-client-1162"/>
+        <value type="string" value="dropbox-client-31431"/>
+        <value type="string" value="dropbox-client-30675"/>
+        <value type="string" value="dropbox-client-25939"/>
+        <value type="string" value="dropbox-client-1069"/>
+        <value type="string" value="dropbox-client-1806"/>
+        <value type="string" value="dropbox-client-1080"/>
+        <value type="string" value="dropbox-client-94506"/>
+        <value type="string" value="dropbox-client-1088"/>
+        <value type="string" value="dropbox-client-1127"/>
+        <value type="string" value="dropbox-client-1922257"/>
+        <value type="string" value="dropbox-client-1422253"/>
+        <value type="string" value="dropbox-client-805140"/>
+        <value type="string" value="dropbox-client-365543"/>
+        <value type="string" value="dropbox-client-1160"/>
+        <value type="string" value="dropbox-client-1285408"/>
+        <value type="string" value="dropbox-client-954498"/>
+        <value type="string" value="dropbox-client-577043"/>
+        <value type="string" value="dropbox-client-89595"/>
+        <value type="string" value="dropbox-client-1165"/>
+        <value type="string" value="dropbox-client-1169"/>
+        <value type="string" value="dropbox-client-3963"/>
+        <value type="string" value="dropbox-client-1198"/>
+        <value type="string" value="dropbox-client-1261"/>
+        <value type="string" value="dropbox-client-1560766"/>
+        <value type="string" value="dropbox-client-1070795"/>
+        <value type="string" value="dropbox-client-490539"/>
+        <value type="string" value="dropbox-client-1512"/>
+        <value type="string" value="dropbox-client-1295"/>
+        <value type="string" value="dropbox-client-1281"/>
+        <value type="string" value="dropbox-client-1286"/>
+        <value type="string" value="dropbox-client-112182"/>
+        <value type="string" value="dropbox-client-1282"/>
+        <value type="string" value="dropbox-client-1288"/>
       </property>
     </property>
-    <property name="plugin-10" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="14847111882.desktop"/>
+    <property name="plugin-16" type="string" value="whiskermenu">
+      <property name="favorites-in-recent" type="bool" value="true"/>
+      <property name="menu-width" type="int" value="1912"/>
+      <property name="menu-height" type="int" value="1025"/>
+      <property name="command-switchuser" type="string" value="gdmflexiserver"/>
+      <property name="show-command-switchuser" type="bool" value="true"/>
+      <property name="favorites" type="array">
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="xfce4-file-manager.desktop"/>
+        <value type="string" value="xfce4-mail-reader.desktop"/>
+        <value type="string" value="xfce4-web-browser.desktop"/>
+        <value type="string" value="emacs.desktop"/>
+      </property>
+      <property name="recent" type="array">
+        <value type="string" value="xfce-settings-manager.desktop"/>
+        <value type="string" value="xfce-wm-settings.desktop"/>
+        <value type="string" value="xfce4-settings-editor.desktop"/>
+        <value type="string" value="xfce4-screensaver-preferences.desktop"/>
+        <value type="string" value="xfce-backdrop-settings.desktop"/>
+        <value type="string" value="xfce-display-settings.desktop"/>
+        <value type="string" value="xscreensaver-settings.desktop"/>
+        <value type="string" value="vlc.desktop"/>
+        <value type="string" value="panel-preferences.desktop"/>
+        <value type="string" value="xscreensaver.desktop"/>
       </property>
     </property>
-    <property name="plugin-11" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="14847111883.desktop"/>
+    <property name="clipman" type="empty">
+      <property name="settings" type="empty">
+        <property name="show-qr-code" type="bool" value="false"/>
+      </property>
+      <property name="tweaks" type="empty">
+        <property name="never-confirm-history-clear" type="bool" value="false"/>
       </property>
     </property>
-    <property name="plugin-12" type="string" value="launcher">
-      <property name="items" type="array">
-        <value type="string" value="14847111884.desktop"/>
-      </property>
-    </property>
-    <property name="plugin-13" type="string" value="separator">
-      <property name="style" type="uint" value="1"/>
-    </property>
-    <property name="plugin-14" type="string" value="directorymenu">
+    <property name="plugin-2" type="string" value="actions"/>
+    <property name="plugin-3" type="string" value="directorymenu">
       <property name="base-directory" type="string" value="/home/wzrd"/>
     </property>
+    <property name="plugin-1" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance1003525;chromium.instance1139775;chromium.instance1146583;chromium.instance1174;chromium.instance1183;chromium.instance1217;chromium.instance1321;chromium.instance1323;chromium.instance1334331;chromium.instance1349;chromium.instance1389;chromium.instance1428;chromium.instance1436;chromium.instance1449836;chromium.instance1466;chromium.instance1468;chromium.instance1511;chromium.instance1543;chromium.instance1546979;chromium.instance155674;chromium.instance1572658;chromium.instance160370;chromium.instance1622;chromium.instance16884;chromium.instance1726;chromium.instance1750;chromium.instance1770;chromium.instance1845;chromium.instance1858;chromium.instance1888;chromium.instance1898;chromium.instance1908;chromium.instance1910;chromium.instance1921;chromium.instance1931;chromium.instance1936;chromium.instance1938;chromium.instance1942;chromium.instance1979;chromium.instance2025;chromium.instance2042;chromium.instance204569;chromium.instance2096;chromium.instance2211;chromium.instance2354;chromium.instance23587;chromium.instance2408;chromium.instance2601;chromium.instance2671;chromium.instance2895;chromium.instance2898;chromium.instance3136;chromium.instance31693;chromium.instance3638;chromium.instance401649;chromium.instance425402;chromium.instance4306;chromium.instance4358;chromium.instance439276;chromium.instance474371;chromium.instance5161;chromium.instance544534;chromium.instance545041;chromium.instance5709;chromium.instance676275;chromium.instance859957;chromium.instance860044;chromium.instance978245;vlc"/>
+      <property name="known-players" type="string" value="Chromium;firefox;vlc"/>
+    </property>
+    <property name="plugin-4" type="string" value="screenshooter"/>
   </property>
 </channel>

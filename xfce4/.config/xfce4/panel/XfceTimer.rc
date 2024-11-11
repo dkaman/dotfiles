@@ -1,0 +1,23 @@
+[G0]
+timername=sleep timer
+time=3600
+timercommand=killall chromium
+timerinfo=1h 0m 0s
+is_countdown=true
+
+[G1]
+timername=wake up for work
+time=390
+timercommand=vlc media/music
+timerinfo=At 06:30
+is_countdown=false
+
+[others]
+nowin_if_alarm=false
+selecting_starts=false
+use_global_command=false
+global_command=
+repeat_alarm=false
+repetitions=1
+repeat_interval=10
+

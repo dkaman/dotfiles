@@ -5,9 +5,13 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+source ~/.zshenv
+
 alias e=$EDITOR
 alias -g noerr="2>/dev/null"
 alias binstrip="tr -cd '\11\12\15\40-\176' < "
+alias rsync="rsync -avz --progress"
+alias open="xdg-open"
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -16,10 +20,6 @@ fi
 
 # Source the fzf keybindings file
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Python virtual env fun
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi # enable shims and autocomplete
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi # # enable auto-activation
 
 # Shell bookmarking :)
 prune_bookmarks() {

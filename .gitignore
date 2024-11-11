@@ -9,3 +9,4 @@ xmonad-i386-linux
 xmonad.o
 xmonad.hi
 xmonad.errors
+xmonad.state

@@ -1,0 +1,153 @@
+
+xmonad.hs:1:1: error:
+    Could not find module ‘Prelude’
+    There are files missing in the ‘base-4.14.1.0’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+1 | import XMonad
+  | ^
+
+xmonad.hs:1:1: error:
+    Could not find module ‘XMonad’
+    There are files missing in the ‘xmonad-0.15’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+1 | import XMonad
+  | ^^^^^^^^^^^^^
+
+xmonad.hs:2:1: error:
+    Could not find module ‘System.IO’
+    There are files missing in the ‘base-4.14.1.0’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+2 | import System.IO
+  | ^^^^^^^^^^^^^^^^
+
+xmonad.hs:4:1: error:
+    Could not find module ‘XMonad.Config.Xfce’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+4 | import XMonad.Config.Xfce
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:5:1: error:
+    Could not find module ‘XMonad.Config.Desktop’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+5 | import XMonad.Config.Desktop
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:7:1: error:
+    Could not find module ‘XMonad.Hooks.DynamicLog’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+7 | import XMonad.Hooks.DynamicLog
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:8:1: error:
+    Could not find module ‘XMonad.Hooks.ManageDocks’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+8 | import XMonad.Hooks.ManageDocks
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:9:1: error:
+    Could not find module ‘XMonad.Hooks.ManageHelpers’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+9 | import XMonad.Hooks.ManageHelpers
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:11:1: error:
+    Could not find module ‘XMonad.Hooks.EwmhDesktops’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+11 | import XMonad.Hooks.EwmhDesktops
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:13:1: error:
+    Could not find module ‘XMonad.Actions.CycleWS’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+13 | import XMonad.Actions.CycleWS
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:14:1: error:
+    Could not find module ‘XMonad.Actions.PhysicalScreens’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+14 | import XMonad.Actions.PhysicalScreens
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:16:1: error:
+    Could not find module ‘XMonad.Util.Run’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+16 | import XMonad.Util.Run(spawnPipe)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:17:1: error:
+    Could not find module ‘XMonad.Util.EZConfig’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+17 | import XMonad.Util.EZConfig(additionalKeysP)
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:19:1: error:
+    Could not find module ‘XMonad.Layout.Spacing’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+19 | import XMonad.Layout.Spacing
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:20:1: error:
+    Could not find module ‘XMonad.Layout.NoBorders’
+    There are files missing in the ‘xmonad-contrib-0.16’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+20 | import XMonad.Layout.NoBorders
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:22:1: error:
+    Could not find module ‘XMonad.StackSet’
+    There are files missing in the ‘xmonad-0.15’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+22 | import qualified XMonad.StackSet as W
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:23:1: error:
+    Could not find module ‘Data.Map’
+    There are files missing in the ‘containers-0.6.2.1’ package,
+    try running 'ghc-pkg check'.
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+23 | import qualified Data.Map        as M
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

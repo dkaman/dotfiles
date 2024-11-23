@@ -1,0 +1,17 @@
+------------------------------------------------------------------------------
+name:          xmonad-with-config
+version:       0.13
+synopsis:      wzrd xmonad config
+homepage:      http://xmonad.org
+author:        wzrd
+maintainer:    wzrd
+copyright:     none
+category:      Graphics
+build-type:    Simple
+cabal-version: >=1.8
+
+------------------------------------------------------------------------------
+executable xmonad-with-config
+  main-is: xmonad.hs
+  ghc-options: -Wall -Werror -fno-warn-missing-signatures
+  build-depends: base, xmonad, xmonad-contrib, directory, containers

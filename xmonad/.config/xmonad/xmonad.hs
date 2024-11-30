@@ -89,6 +89,7 @@ myKeys =
   -- window sizing
   , ("M4--"           , sendMessage Expand)
   , ("M4-S--"         , sendMessage Shrink)
+  , ("M4-="           , spawn "autorandr --change")
 
   -- spawn tmux'd terminal or regular one
   , ("M4-<Return>"    , spawn "termite -e \"$SHELL -c 'tmux new-session -A -s $USER'\"")

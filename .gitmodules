@@ -1,6 +1,9 @@
-[submodule "xmonad/.config/xmonad/xmonad"]
-	path = xmonad/.config/xmonad/xmonad
+[submodule "xmonad/.config/xmonad/xmobar-git"]
+	path = xmonad/.config/xmonad/xmobar-git
+	url = https://codeberg.org/xmobar/xmobar.git
+[submodule "xmonad/.config/xmonad/xmonad-git"]
+	path = xmonad/.config/xmonad/xmonad-git
 	url = git@github.com:xmonad/xmonad.git
-[submodule "xmonad/.config/xmonad/xmonad-contrib"]
-	path = xmonad/.config/xmonad/xmonad-contrib
+[submodule "xmonad/.config/xmonad/xmonad-contrib-git"]
+	path = xmonad/.config/xmonad/xmonad-contrib-git
 	url = git@github.com:xmonad/xmonad-contrib.git

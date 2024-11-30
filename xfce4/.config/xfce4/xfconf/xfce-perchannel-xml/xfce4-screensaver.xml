@@ -6,13 +6,15 @@
     <property name="fullscreen-inhibit" type="bool" value="true"/>
     <property name="themes" type="empty">
       <property name="list" type="array">
-        <value type="string" value="xscreensaver-settings"/>
+        <value type="string" value="xscreensaver"/>
       </property>
     </property>
+    <property name="enabled" type="bool" value="true"/>
   </property>
   <property name="lock" type="empty">
     <property name="saver-activation" type="empty">
       <property name="enabled" type="bool" value="true"/>
+      <property name="delay" type="int" value="1"/>
     </property>
     <property name="enabled" type="bool" value="false"/>
   </property>

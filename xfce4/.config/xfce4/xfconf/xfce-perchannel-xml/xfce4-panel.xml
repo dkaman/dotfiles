@@ -60,6 +60,18 @@
         <value type="string" value="networkmanager applet"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (99%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (87%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (71%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (76%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (80%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (62%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (77%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (65%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (84%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (70%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (100%)"/>
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (81%)"/>
         <value type="string" value="wi-fi network connection “studio metric” active: studio metric (60%)"/>
         <value type="string" value="wi-fi network connection “studio metric” active: studio metric (58%)"/>
         <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (69%)"/>
@@ -132,16 +144,16 @@
         <value type="string" value="emacs.desktop"/>
       </property>
       <property name="recent" type="array">
-        <value type="string" value="xfce-settings-manager.desktop"/>
-        <value type="string" value="xfce-wm-settings.desktop"/>
+        <value type="string" value="emacs.desktop"/>
+        <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="xfce4-settings-editor.desktop"/>
-        <value type="string" value="xfce4-screensaver-preferences.desktop"/>
         <value type="string" value="xfce-backdrop-settings.desktop"/>
-        <value type="string" value="xfce-display-settings.desktop"/>
+        <value type="string" value="xfce-settings-manager.desktop"/>
+        <value type="string" value="xfce-ui-settings.desktop"/>
         <value type="string" value="xscreensaver-settings.desktop"/>
-        <value type="string" value="vlc.desktop"/>
-        <value type="string" value="panel-preferences.desktop"/>
-        <value type="string" value="xscreensaver.desktop"/>
+        <value type="string" value="firefox.desktop"/>
       </property>
     </property>
     <property name="clipman" type="empty">
@@ -159,7 +171,7 @@
     <property name="plugin-1" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="mpris-players" type="string" value="chromium.instance1003525;chromium.instance1139775;chromium.instance1146583;chromium.instance1174;chromium.instance1183;chromium.instance1217;chromium.instance1321;chromium.instance1323;chromium.instance1334331;chromium.instance1349;chromium.instance1389;chromium.instance1428;chromium.instance1436;chromium.instance1449836;chromium.instance1466;chromium.instance1468;chromium.instance1511;chromium.instance1543;chromium.instance1546979;chromium.instance155674;chromium.instance1572658;chromium.instance160370;chromium.instance1622;chromium.instance16884;chromium.instance1726;chromium.instance1750;chromium.instance1770;chromium.instance1845;chromium.instance1858;chromium.instance1888;chromium.instance1898;chromium.instance1908;chromium.instance1910;chromium.instance1921;chromium.instance1931;chromium.instance1936;chromium.instance1938;chromium.instance1942;chromium.instance1979;chromium.instance2025;chromium.instance2042;chromium.instance204569;chromium.instance2096;chromium.instance2211;chromium.instance2354;chromium.instance23587;chromium.instance2408;chromium.instance2601;chromium.instance2671;chromium.instance2895;chromium.instance2898;chromium.instance3136;chromium.instance31693;chromium.instance3638;chromium.instance401649;chromium.instance425402;chromium.instance4306;chromium.instance4358;chromium.instance439276;chromium.instance474371;chromium.instance5161;chromium.instance544534;chromium.instance545041;chromium.instance5709;chromium.instance676275;chromium.instance859957;chromium.instance860044;chromium.instance978245;vlc"/>
-      <property name="known-players" type="string" value="Chromium;firefox;vlc"/>
+      <property name="known-players" type="string" value="Chromium;firefox;tor browser;vlc"/>
     </property>
     <property name="plugin-4" type="string" value="screenshooter"/>
   </property>

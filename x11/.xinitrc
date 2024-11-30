@@ -15,4 +15,6 @@ fi
 
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
+autorandr --change
+
 exec startxfce4

@@ -10,3 +10,6 @@ xmonad.o
 xmonad.hi
 xmonad.errors
 xmonad.state
+stack.yaml.lock
+-lm
+.stack-work

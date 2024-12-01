@@ -95,3 +95,5 @@ dired() {
         emacsclient -e "(dired \"$1\")"
     fi
 }
+
+[ -f "/home/wzrd/.ghcup/env" ] && . "/home/wzrd/.ghcup/env" # ghcup-env

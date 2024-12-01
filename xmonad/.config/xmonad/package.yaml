@@ -1,0 +1,21 @@
+name: xmonad-config
+version: 0.1.0.0
+license: BSD-3-Clause
+cabal-version: ">=1.10"
+build-type: Simple
+
+dependencies:
+  - base >=4.14 && <5
+  - xmonad
+  - xmonad-contrib
+  - xmobar
+  - directory
+
+executables:
+  xmonad-config:
+    main: xmonad.hs
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    source-dirs: .

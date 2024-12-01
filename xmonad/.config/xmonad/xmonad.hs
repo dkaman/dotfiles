@@ -91,7 +91,7 @@ myKeys =
 
   -- spawn tmux'd terminal or regular one
   , ("M4-<Return>"    , spawn "termite -e \"$SHELL -c 'tmux new-session -A -s $USER'\"")
-  , ("M4-S-<Return>"  , spawn $ myTerminal)
+  , ("M4-S-<Return>"  , spawn myTerminal)
 
   -- screenshots
   , ("M4-p"           , spawn "ksnip -r")
@@ -150,8 +150,4 @@ launchFirefoxWithProfile = io $ do
                         ++ yadCommand allProfiles
                         ++ " | sed 's/|$//' | xargs -I {} bash -c 'if [ \"{}\" = \"scratch\" ]; then torbrowser-launcher; else firefox --no-remote -P \"{}\"; fi'\""
             -- Execute the command after showing it
-            spawn $ command
-
--- Helper function to escape double quotes in the command
--- escapeDoubleQuotes :: String -> String
--- escapeDoubleQuotes = concatMap (\c -> if c == '"' then "\\\"" else [c])
+            spawn command

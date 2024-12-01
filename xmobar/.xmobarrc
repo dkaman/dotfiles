@@ -39,6 +39,7 @@ Config {
          , Run MultiCpu       [ "-t"       , "cpu: <total0>%|<total1>%|<total2>%|<total3>%"
                               , "-L"       , "3"
                               , "-H"       , "50"
+                              , "-p"       , "3"
                               , "--normal" , "#95e454"
                               , "--high"   , "#e5786d"
                               ] 10

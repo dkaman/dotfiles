@@ -1,11 +1,12 @@
 import XMonad
 import System.IO
 
-import XMonad.Config.Xfce
-
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.StatusBar
+import XMonad.Hooks.StatusBar.PP
+import XMonad.Hooks.EwmhDesktops
 
 import XMonad.Actions.CycleWS
 import XMonad.Actions.PhysicalScreens
@@ -32,16 +33,16 @@ myForeground = "#f6f3e8"
 -- myAccent     = "#85E0FF"
 
 main = do
-  h <- spawnPipe "xmobar /home/wzrd/.xmobarrc"
-  xmonad $ xfceConfig
+  xmonad $ withEasySB mySB defToggleStrutsKey $ ewmhFullscreen $ ewmh $ def
          { terminal           = myTerminal
          , borderWidth        = 2
          , focusedBorderColor = myHighlight
          , layoutHook         = avoidStruts $ smartBorders $ spacing 2 $ layoutHook def
          , manageHook         = myManageHook <+> manageHook def
-         , logHook            = myLogHook h
          , modMask            = mod4Mask
          } `additionalKeysP` myKeys
+
+mySB = statusBarProp "xmobar ~/.xmobarrc" (pure myPP)
 
 myManageHook = composeAll
       [ className =? "Xfrun4" --> doCenterFloat
@@ -50,9 +51,7 @@ myManageHook = composeAll
       , manageDocks
       ]
 
-myLogHook h = dynamicLogWithPP $ myPP h
-
-myPP h = xmobarPP
+myPP = def
   { ppCurrent         = xmobarColor myEmpty "" . wrap "{" "}" . xmobarColor myHighlight ""
   , ppVisible         = xmobarColor myEmpty "" . wrap "[" "]" . xmobarColor myVisible ""
   , ppHidden          = xmobarColor myForeground ""
@@ -61,7 +60,6 @@ myPP h = xmobarPP
   , ppLayout          = xmobarColor myForeground ""
   , ppSep             = " <fc=" ++ myLowlight ++ ">|</fc> "
   , ppWsSep           = " "
-  , ppOutput          = hPutStrLn h
   }
 
 myKeys =
@@ -96,8 +94,7 @@ myKeys =
   , ("M4-S-<Return>"  , spawn $ myTerminal)
 
   -- screenshots
-  , ("M4-p"           , spawn "scrot ~/screenshots/screen-%Y-%m-%d.png")
-  , ("M4-S-p"         , spawn "scrot ~/screenshots/window-%Y-%m-%d.png -u")
+  , ("M4-p"           , spawn "ksnip -r")
 
   -- killing stuff
   , ("M4-c"           , kill)

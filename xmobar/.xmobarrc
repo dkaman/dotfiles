@@ -17,7 +17,7 @@ Config {
        -- layout
        , sepChar  = "%"  -- delimeter between plugin names and text
        , alignSep = "}{" -- separator between left-right alignment
-       , template = "%StdinReader% }{ <fc=#8ac6f2>|</fc> %multicpu% %coretemp% <fc=#8ac6f2>|</fc> %memory% <fc=#8ac6f2>|</fc> %date% <fc=#8ac6f2>|</fc> aus: %KAUS% <fc=#8ac6f2>|</fc> %battery%"
+       , template = "%XMonadLog% }{ <fc=#8ac6f2>|</fc> %multicpu% %coretemp% <fc=#8ac6f2>|</fc> %memory% <fc=#8ac6f2>|</fc> %date% <fc=#8ac6f2>|</fc> aus: %KAUS% <fc=#8ac6f2>|</fc> %battery%"
 
        -- general behavior
        , lowerOnStart = True -- send to the bottom of window stack on start
@@ -26,7 +26,8 @@ Config {
        -- plugins
        , commands =
          -- weather monitor for austin airport
-         [ Run Weather "KAUS" [ "-t"       , "<tempF>°F/<tempC>°C"
+         [ Run XMonadLog
+         , Run Weather "KAUS" [ "-t"       , "<tempF>°F/<tempC>°C"
                               , "-L"       , "64"
                               , "-H"       , "77"
                               , "--normal" , "#95e454"
@@ -74,8 +75,5 @@ Config {
 
          -- date display
          , Run Date "%F (%a) %T" "date" 10
-
-         -- xmonad window display
-         , Run StdinReader
          ]
        }

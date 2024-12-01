@@ -13,7 +13,8 @@
       <property name="IsFailsafe" type="empty"/>
       <property name="Count" type="empty"/>
       <property name="Client0_Command" type="array">
-        <value type="string" value="/home/wzrd/.cache/xmonad/xmonad-with-config"/>
+        <value type="string" value="/home/wzrd/.cache/xmonad/xmonad-x86_64-linux"/>
+        <value type="string" value="--replace"/>
       </property>
       <property name="Client0_Priority" type="empty"/>
       <property name="Client0_PerScreen" type="empty"/>

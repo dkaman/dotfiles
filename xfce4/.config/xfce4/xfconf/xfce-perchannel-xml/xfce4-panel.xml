@@ -60,6 +60,7 @@
         <value type="string" value="networkmanager applet"/>
       </property>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (88%)"/>
         <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (99%)"/>
         <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (87%)"/>
         <value type="string" value="wi-fi network connection “ssid barrett” active: ssid barrett (71%)"/>
@@ -82,6 +83,7 @@
         <value type="string" value="networkmanager applet"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="ksnip"/>
         <value type="string" value="electrum"/>
         <value type="string" value="chrome_status_icon_1"/>
         <value type="string" value="vlc"/>
@@ -144,12 +146,11 @@
         <value type="string" value="emacs.desktop"/>
       </property>
       <property name="recent" type="array">
-        <value type="string" value="emacs.desktop"/>
         <value type="string" value="xfce-session-settings.desktop"/>
+        <value type="string" value="emacs.desktop"/>
         <value type="string" value="xfce4-terminal-emulator.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="xfce4-settings-editor.desktop"/>
-        <value type="string" value="xfce-backdrop-settings.desktop"/>
         <value type="string" value="xfce-settings-manager.desktop"/>
         <value type="string" value="xfce-ui-settings.desktop"/>
         <value type="string" value="xscreensaver-settings.desktop"/>

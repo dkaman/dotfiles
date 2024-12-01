@@ -13,3 +13,4 @@ xmonad.state
 stack.yaml.lock
 -lm
 .stack-work
+/xmonad/.config/xmonad/dist-newstyle/

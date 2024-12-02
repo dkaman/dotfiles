@@ -16,6 +16,10 @@ org-directory will be set to this value after being normalized")
   "this is the base name of the top-level manna file. this is where the
 index and global inbox will be created.")
 
+(defvar manna/journal-file "journal.org"
+  "journal file, will be a datetree of entries"
+  )
+
 (defvar manna/org-custom-daily-agenda
   `((tags-todo "*"
                ((org-agenda-skip-function '(org-agenda-skip-if nil '(timestamp)))
@@ -37,6 +41,8 @@ index and global inbox will be created.")
     (todo "NEXT"
           ((org-agenda-block-separator nil)
            (org-agenda-overriding-header "\nnext actions\n")))
+    (stuck "" ((org-agenda-block-separator nil)
+               (org-agenda-overriding-header "\nstuck projects\n")))
     (agenda "" ((org-agenda-start-on-weekday nil)
                 (org-agenda-start-day "+1d")
                 (org-agenda-span 3)

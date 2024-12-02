@@ -68,8 +68,7 @@ Each entry is either:
   (setq manna/top-level-file (f-expand manna/top-level-file-name org-directory))
   (setq manna/categories-directory (file-name-as-directory (f-expand "categories" org-directory)))
   (setq manna/templates-directory (file-name-as-directory (f-expand "templates" org-directory)))
-  (setq org-agenda-files `(,org-directory
-                           ,manna/categories-directory))
+  (setq org-agenda-files `(,org-directory ,manna/categories-directory))
   (setq manna/archive-directory (f-expand ".archive" org-directory))
 
   ;; todo states along with actions for each
@@ -98,6 +97,10 @@ Each entry is either:
         (format "%s::datetree/"
                 (f-join manna/archive-directory (format "%s.org" (manna/current-date-to-quarter)))))
 
+  ;; how do stuck projects work?
+  (setq org-stuck-projects
+        '("+project+LEVEL=2" ("NEXT") nil ""))
+
   ;; capture templates
   (setq org-capture-templates
         `(("t" "task" entry (file+headline manna/top-level-file "inbox")
@@ -105,6 +108,13 @@ Each entry is either:
            :kill-buffer t)
           ("p" "project" entry (file+headline manna/top-level-file "projects")
            "* %? %^g\n\n%(org-clock-report)"
+           :kill-buffer t)
+          ("n" "note" entry (file+headline manna/top-level-file "notes")
+           "* %U\n%?"
+           :empty-lines 1
+           :kill-buffer t)
+          ("j" "journal" entry (file+olp+datetree manna/journal-file)
+           "* %U\n%?"
            :kill-buffer t)
           ("c" "category files")
           ("cg" "gtd file" plain (file manna/get-category-file)
@@ -136,9 +146,6 @@ Each entry is either:
               (org-agenda-remove-tags t))
              ("agenda.txt")))))
 
-  (org-babel-do-load-languages 'org-babel-load-languages
-                               '((ledger . t)))
-
   ;; --- hooks ---
 
   ;; prevent the default face colors from hl-todo-mode from shadowing the ones
@@ -156,6 +163,9 @@ Each entry is either:
   ;; globally open my todo file
   (evil-leader/set-key "of" 'manna/find-top-level-file)
 
+  ;; globa
+  (evil-leader/set-key "op" 'manna/process-inbox-top-level)
+
   ;; toggle columns with ,<TAB> or <SPC>m<TAB>
   (spacemacs/set-leader-keys-for-major-mode 'org-mode "TAB" 'org-columns)
 
@@ -164,7 +174,6 @@ Each entry is either:
     (define-key org-mode-map (kbd "C-j") 'org-forward-heading-same-level)
     (define-key org-mode-map (kbd "C-k") 'org-backward-heading-same-level)
     (define-key org-mode-map (kbd "C-h") 'outline-up-heading)
-    (define-key org-mode-map (kbd "C-l") 'outline-next-visible-heading)
-    ))
+    (define-key org-mode-map (kbd "C-l") 'outline-next-visible-heading)))
 
 ;;; packages.el ends here

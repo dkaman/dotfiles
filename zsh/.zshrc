@@ -1,11 +1,7 @@
 #
 # Executes commands at the start of an interactive session.
 #
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
-
-source ~/.zshenv
 
 alias e=$EDITOR
 alias -g noerr="2>/dev/null"

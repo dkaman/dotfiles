@@ -81,7 +81,7 @@
     </property>
   </property>
   <property name="Notify" type="bool" value="true"/>
-  <property name="ActiveProfile" type="string" value="0118071e3179f3b62143980fa4b9ae044f46b952"/>
+  <property name="ActiveProfile" type="string" value="Default"/>
   <property name="Fallback" type="empty">
     <property name="eDP-1" type="string" value="Laptop">
       <property name="Active" type="bool" value="false"/>

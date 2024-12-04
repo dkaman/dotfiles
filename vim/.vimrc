@@ -4,12 +4,12 @@
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Contents ('t) <= will take you back here
+" Contents
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" 1). General Setting ('g)
-" 2). Colors and fonts ('c)
-" 3). Key Mappings ('k)
+" 1). General Setting
+" 2). Colors and fonts
+" 3). Key Mappings
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -103,7 +103,7 @@ colorscheme darkocean
     nmap <SPACE><SPACE> //<CR>
 
 "---Insert mode bindings
-    
+
     "---Make jj work like <ESC> for insert mode (kinda weird, still trying
     "this out (growing on me though)
     inoremap jj <ESC>
@@ -115,7 +115,7 @@ colorscheme darkocean
     vmap < <gv
 
 "---Leader bindings (custom stuff)
-    
+
     "---Handling the vimrc file (this file)
     nmap <Leader>ev ;e $MYVIMRC<CR>
     nmap <Leader>sv ;so $MYVIMRC<CR>
@@ -127,14 +127,14 @@ colorscheme darkocean
 
     "---NERDTree
     nmap <Leader>nt ;NERDTreeToggle<CR>
-    
+
     "---Puts a semicolon at the end of the line and restores where you were in
     "the line
     nmap <Leader>; maA;<ESC>'a
 
     "---Easy manual folding
     nmap <Leader>f vipzf
-    
+
     "---Append to file with ,G 'a to return
     nmap <Leader>G maGo
 

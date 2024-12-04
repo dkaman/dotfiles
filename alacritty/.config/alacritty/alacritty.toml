@@ -1,0 +1,47 @@
+# Alacritty Configuration with Wombat Theme Colors and Source Code Pro Font
+
+[colors]
+# Primary colors
+[colors.primary]
+foreground = "#f6f3e8" # Light beige
+background = "#242424" # Dark grey
+
+# Normal colors
+[colors.normal]
+black   = "#242424" # Background color
+red     = "#d75f5f" # Warm red
+green   = "#afaf87" # Muted green
+yellow  = "#f0dfaf" # Warm yellow
+blue    = "#87afd7" # Muted blue
+magenta = "#d787af" # Muted magenta
+cyan    = "#87d7d7" # Muted cyan
+white   = "#d0d0d0" # Light grey
+
+# Bright colors
+[colors.bright]
+black   = "#585858" # Dark grey
+red     = "#d78787" # Warm light red
+green   = "#d7d7af" # Muted light green
+yellow  = "#ffefaf" # Warm light yellow
+blue    = "#87d7ff" # Light blue
+magenta = "#ffafd7" # Light magenta
+cyan    = "#d7ffff" # Light cyan
+white   = "#ffffff" # White
+
+# Cursor colors
+[colors.cursor]
+text = "#242424"    # Cursor text
+cursor = "#f6f3e8"  # Cursor background
+
+# Selection colors
+[colors.selection]
+text = "#242424"        # Selected text
+background = "#afaf87"  # Selection background
+
+[font]
+# Font family and size
+normal = { family = "Source Code Pro" }
+size = 12.0
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1.0"
